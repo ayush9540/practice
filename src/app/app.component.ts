@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'practice';
-  pdata = 'I am from Parent Component';
-  childDataFromParent: string;
+  Cdata_from_ParentComp: string;
+  myParentData = "I am data from Parent Component";
 }
