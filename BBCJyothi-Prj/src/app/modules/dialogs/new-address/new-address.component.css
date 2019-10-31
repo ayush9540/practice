@@ -1,0 +1,48 @@
+
+.container{
+
+}
+.mat-card{
+    background: #3f51b5;
+    color: white;
+    padding: 0.5%;
+    margin-top: -2.2%;
+    margin-left: -2%;
+    width: 102.5%;
+    padding-left: 1%;
+}
+table{
+    width: 100%;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+.addressTd{
+    width: 10%;   
+}
+.adrsInpt{
+    width: 100%;
+}
+.inptTd{
+    width: 53%;
+}
+.stateTd{
+    width: 10%;
+}
+.citInpt{
+    width: 97%;
+}
+.countryInpt{
+    width: 100%;
+}
+.donBtn{
+    float: right;
+}
+.btnGrp{
+    /* width: 20%; */
+}
+
+
+
+
+

@@ -1,0 +1,84 @@
+<div class="row">
+  <mat-card>Select Queues<p (click)="closeDialog()" class="closeBtn">&times;</p></mat-card>
+  <div>
+    <div class="listQues">
+      <mat-label>List queues whose</mat-label>
+    </div>
+    <table>
+      <tr>
+        <td class="titleTd">
+          <mat-form-field class="title">
+            <mat-select [(ngModel)]="titleValue">
+              <mat-option *ngFor="let selectTitle of titleDropdown" [value]="selectTitle">{{selectTitle}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td class="titleTd">
+          <mat-form-field class="select">
+            <mat-select [(ngModel)]="subOpt">
+              <mat-option *ngFor="let selectValue of selectedDropdown" [value]="selectValue">{{selectValue}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td class="inputTd">
+          <mat-form-field class="input">
+            <input matInput [(ngModel)]="qryInput" type="text">
+          </mat-form-field>
+        </td>
+        <td class="titleTd">
+          <mat-form-field class="sortingValues">
+            <mat-select [(ngModel)]="sortOpt">
+              <mat-option *ngFor="let sortValue of sortOptions" [value]="sortValue">{{sortValue}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td class="titleTd">
+          <button mat-raised-button (click)="listApi()" color="primary" mat-button>List</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="selectContent">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bbwDraggableTable>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef class="th"> Title </th>
+        <td mat-cell class="td" *matCellDef="let selectQueues"> {{selectQueues.title}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="idNumber">
+        <th mat-header-cell *matHeaderCellDef class="th thEight"> Description </th>
+        <td mat-cell class="td tdEight" *matCellDef="let selectQueues"> {{selectQueues.description}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="th thSeven"> Type</th>
+        <td mat-cell class="td tdSeven" *matCellDef="let selectQueues"> 
+          <span [hidden]="selectQueues.sharedPers != '1'">Shared</span>
+          <span [hidden]="selectQueues.sharedPers == '1'">Personal</span>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns;" (dblclick)="openQueueDialog()"
+        [ngClass]="{'highlight': selectedTyp == row}" (click)="setClickedRow(row)"></tr>
+    </table>
+  </div>
+  <table class="btnGrp">
+    <tr>
+      <td class="itemTd">
+        <mat-form-field class="item">
+          <input matInput type="text" disabled [(ngModel)]="selectQueue.length" >
+        </mat-form-field>
+        <mat-label>Items</mat-label>
+      </td>
+      <td><button mat-raised-button color="primary" (click)="newSelectQueueDialog()" class="newBtn" mat-button [disabled]="empRole.dslLimited">New</button></td>
+      <td><button mat-raised-button color="primary" (click)="openQueueDialog()" class="newBtn" [disabled]="disabledButton" mat-button>Open</button></td>
+      <td><button mat-raised-button color="primary" (click)="deleteQueueInfo()" class="newBtn" [disabled]="disabledButton || empRole.dslLimited" mat-button>Delete</button></td>
+      <td><button mat-raised-button (click)="closeDialog()" color="primary" class="btnDon" mat-button>Done</button></td>
+    </tr>
+  </table>
+</div>

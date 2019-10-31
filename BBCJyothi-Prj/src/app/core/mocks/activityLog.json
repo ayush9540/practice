@@ -1,0 +1,200 @@
+[
+    {
+        "entryTime": "06/18/2019 11:05:08 AM",
+        "actCode": null,
+        "addInfo": "TX-ID:20196181153610TX-STATUS:Non State Change Request for PreQual Was Successfully Processed - Click on Additional Info to see valid speeds.\nCovad 384/384 Kbps Covad\n\nCovad 192/192 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:12:04 AM",
+        "actCode": null,
+        "addInfo": "Status = Closed, Resolution Code = Task Completed, State = Open.",
+        "loginName": "rallerot",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Closed",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:11:27 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618111124290\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:11:21 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618111118319\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:10:43 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618111039597\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:10:37 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618111033486\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:10:30 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618111027314\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:10:24 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618111021285\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:07:35 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Update Notification Request for Brass Status & Provider Status & Worklog Info Was Successfully Processed\n TX-ID: BR10827579 \n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:05:47 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618110543539\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:05:43 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Update Action request to Brass TX-ACTION: Update Action Request. TX-ID: 20190618110538629 ",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:05:38 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for Status\nTX-ACTION: Fetch Action Request for Status\nTX-ID:20190618110535719\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:05:08 AM",
+        "actCode": null,
+        "addInfo": "TX-ID:20196181153610TX-STATUS:Non State Change Request for PreQual Was Successfully Processed - Click on Additional Info to see valid speeds.\nCovad 384/384 Kbps Covad\n\nCovad 192/192 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\nCovad 384/384 Kbps Covad\n\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:04:47 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for ChargeCodes\nTX-ACTION: Fetch Action Request for ChargeCodes\nTX-ID:20190618110443403\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:04:42 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Update Action request to Brass TX-ACTION: Update Action Request. TX-ID: 20190618110438383 ",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:04:38 AM",
+        "actCode": null,
+        "addInfo": "TX-STATUS: Successful Fetch Action Request to Brass for Status\nTX-ACTION: Fetch Action Request for Status\nTX-ID:20190618110435211\n",
+        "loginName": "accc",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Brass Success",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 11:03:56 AM",
+        "actCode": null,
+        "addInfo": "Contact = EthanHart, Priority = 2 - Medium, Status = Solving",
+        "loginName": "rallerot",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Create",
+        "sActName": null
+    },
+    {
+        "entryTime": "06/18/2019 04:10:01 AM",
+        "actCode": null,
+        "addInfo": "from WIP Bin default to Queue DSL BILLING CHANGE ORDER",
+        "loginName": "rallerot",
+        "sLoginName": null,
+        "parentObjid": null,
+        "objid": null,
+        "actName": "Dispatch",
+        "sActName": null
+    }
+]

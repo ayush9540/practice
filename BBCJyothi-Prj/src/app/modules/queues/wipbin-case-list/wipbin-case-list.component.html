@@ -1,0 +1,144 @@
+<div>
+
+  <mat-card>{{headerInfo.node}} {{headerInfo.title}}</mat-card>
+</div>
+<!-- <div class="planner-dropdown">
+  <table class="wipbin-drop">
+    <tr>
+    
+    <td class="wipdrop-td">
+      <mat-form-field class="wipdrop-list">
+      <mat-select [(ngModel)]="firstList">
+          <mat-option *ngFor="let drop of selectDrop" [value]="drop">{{drop}}</mat-option> 
+        </mat-select>
+      </mat-form-field>
+    </td>
+  <td><mat-label></mat-label></td>
+  </tr>
+  </table>
+  </div> -->
+<div class="planner-dropdown">
+  <table class="wipbin-tbl">
+    <tr>
+      <td>
+        <mat-form-field class="wipdrop-list1">
+          <mat-select [(ngModel)]="firstDrop" (ngModelChange)=setDefault($event)>
+            <mat-option *ngFor="let drop2 of selectDrop2" [value]="drop2">{{drop2}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="wipdrop-list1 leftOne">
+          <mat-select [(ngModel)]="secondDrop">
+            <mat-option *ngFor="let drop3 of selectedDrop3" [value]="drop3">{{drop3}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="firstDrop != 'Age'" class="wipdrop-inpt leftOne">
+          <input matInput [(ngModel)]="userTextInput">
+          <!-- <input matInput type="text" [value]="enteredText" [(ngModel)]="selectedOptions"> -->
+        </mat-form-field>
+        <mat-form-field *ngIf="firstDrop == 'Age';" class="datePicker">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="userInput">
+          <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="firstDrop != 'Age'"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+        <!-- <button class="dslSirDrp leftOne" color="primary" mat-raised-button [disabled]="drop2 != 'Age'">E/T</button> -->
+
+        <mat-form-field class="wipdrop-list1 leftOne">
+          <mat-select [(ngModel)]="fourthList">
+            <mat-option *ngFor="let drop4 of selectedDrop4" [value]="drop4">{{drop4}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button class="listBtn" color="primary" mat-raised-button (click)="listButton()">List</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="plnrBrdr">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bbwDraggableTable>
+
+    <!-- Position Column -->
+    <!-- <ng-container matColumnDef="type">
+                  <th mat-header-cell *matHeaderCellDef class="th"> Type </th>
+                  <td mat-cell class="td" *matCellDef="let wipBinCase"> {{wipBinCase.type}} </td>
+                </ng-container> -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="idNumber">
+      <th mat-header-cell *matHeaderCellDef class="th thEight"> ID </th>
+      <td mat-cell class="td tdEight" *matCellDef="let wipBinCase"> {{wipBinCase.idNumber}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="th thSeven"> Site Name</th>
+      <td mat-cell class="td tdSeven" *matCellDef="let wipBinCase"> {{wipBinCase.name}} </td>
+    </ng-container>
+
+    <!-- age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef class="thOne th"> Age(d h:m) </th>
+      <td mat-cell class="td tdOne" *matCellDef="let wipBinCase"> {{wipBinCase.age}} </td>
+    </ng-container>
+    <!--Condition-->
+    <ng-container matColumnDef="condition">
+      <th mat-header-cell *matHeaderCellDef class="thTwo th">Condition </th>
+      <td mat-cell class="td tdTwo" *matCellDef="let wipBinCase"> {{wipBinCase.condition}} </td>
+    </ng-container>
+    <!--Status-->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef class="thThree th"> Status </th>
+      <td mat-cell class="td tdThree" *matCellDef="let wipBinCase"> {{wipBinCase.status}} </td>
+    </ng-container>
+
+    <!--Priority-->
+    <ng-container matColumnDef="priority">
+      <th mat-header-cell *matHeaderCellDef class="thFour th"> Priority </th>
+      <td mat-cell class="td tdFour" *matCellDef="let wipBinCase"> {{wipBinCase.priority}} </td>
+    </ng-container>
+    <!--Serveri-->
+    <ng-container matColumnDef="severity">
+      <th mat-header-cell *matHeaderCellDef class="thFive th"> Severity </th>
+      <td mat-cell class="td tdFive" *matCellDef="let wipBinCase"> {{wipBinCase.severity}} </td>
+    </ng-container>
+    <!--Title-->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef class="thSix th"> Title </th>
+      <td mat-cell class="td tdSix" *matCellDef="let wipBinCase"> {{wipBinCase.title}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns;" (dblclick)="openCase();closeSideNav();"
+      [ngClass]="{'highlight': selectedTyp == row}" (click)="setClickedRow(row)"></tr>
+  </table>
+
+</div>
+<mat-paginator class="pagination-row" [pageSizeOptions]="[50, 100, 200]" showFirstLastButtons></mat-paginator>
+
+<table class="myTitle">
+  <tr>
+    <td class="titleTd"><label>Title</label></td>
+    <td class="dlsInptTitl">
+      <mat-form-field class="dslSriTitlInpt">
+        <input [disabled]="true" [(ngModel)]="title" matInput type="text">
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+<table class="itm-grp">
+  <tr>
+    <td class="itm-td">
+      <mat-form-field class="itm-inpt">
+        <input [disabled]="true" [value]="wipBinCase.length" matInput type="text">
+      </mat-form-field>
+      <mat-label>Items</mat-label>
+    </td>
+    <td><button class="btn1" color="primary" mat-raised-button [disabled]="disabledButton" (click)="openCase();closeSideNav();">Open</button></td>
+    <td> <button class="btn1" color="primary" mat-raised-button [disabled]="disabledButton || empRole.dslLimited"
+        (click)="dispatchCase()">Dispatch</button></td>
+    <td><button class="btn1" color="primary" mat-raised-button (click)="closeSideNav()">Done</button></td>
+  </tr>
+
+</table>

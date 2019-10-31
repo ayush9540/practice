@@ -1,0 +1,235 @@
+.divTbl{
+    width: 100%;
+    height: 150px;
+    border: 1px solid gray;
+    overflow: auto;
+}
+
+.divTbl2{
+    width: 90%;
+    height: 150px;
+    float: right;
+    border: 1px solid gray;
+}
+tr.mat-row:nth-child(odd){
+    background: #f2f2f2;
+}
+tr.mat-row.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+.tbl{
+    width: 100%;
+}
+/* table, tr, td{
+    border: 1px solid
+} */
+.providerInfo{
+    width: 97%;
+    height: 160px;
+    border: 1px solid gray;
+}
+.billingInpt{
+    margin-left: 2%;
+    width: 28%;
+}
+.inpt{
+margin-left: 6%;
+}
+.ipInfo{
+    /* height: 377px; */
+    width: 97%;
+}
+.ipLbl{
+
+}
+.ipInpt{
+
+}
+.ipLblTd{
+
+}
+.provderHeader{
+    margin-top: -1%;
+}
+
+.ipInfoLbl{
+    width: 25%;
+}
+.ipInfoBorder{
+    width: 58%;
+    /* height: 76%; */
+    /* border: 1px solid gray; */
+}
+.ipInfoInpt{
+    width: 100%;
+
+}
+.IpInfoTbl{
+    width: 100%;
+}
+.tableUp{
+    margin-top: -5.5%;
+}
+.ipInfoOut{
+    width: 39%;
+    /* height: 60%; */
+    float: right;
+    margin-top: -28%;
+}
+.availIpAdrs{
+    height: 12%;
+    margin-top: -2.5%;
+}
+.availTo{
+    margin-left: 40%;
+}
+.selectDrop{
+    width: 78%;
+    height: 76px;
+    border: 1px solid gray;
+}
+.selectOne{
+    width: 10%;
+}
+tr.mat-header-row{
+    height: 21px;
+    background: #3f51b5;
+    color: white;
+}
+.selectAlin{
+    margin-left: 35%;
+}
+.otherService{
+    height: 50px;
+}
+.OtherInfo{
+    width: 14%;
+}
+.otherAlin{
+    margin-left: 3%;
+}
+.SubInfoOne{
+    width: 16%;
+}
+.SubInfo{
+    width: 17%;
+    margin-left: 10.5%;
+}
+.lineSplt{
+   margin-top: 0.5%;
+}
+.OtherHead{
+    margin-top: 2%;
+}
+.btn1{
+    margin-left: 16%;
+}
+.btn2{
+    float: right;
+}
+.btn{
+    background: #3f51b5;
+    color: white;
+}
+.mat-elevation-z8{
+    width: 100%;
+}
+th.mat-header-cell{
+    color: white;
+  }
+.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+.optInfo{
+    padding-top: 2%;
+}
+.optionalInfo{
+    height: 100px;
+    width: 45%;
+    display: inline-block;
+    border: 1px solid gray;
+    overflow: auto;
+}
+.unsupOption{
+    height: 100px;
+    width: 45%;
+    border: 1px solid gray;
+    overflow: auto;
+}
+.optionTbl{
+    width: 100%;
+}
+.unSubBtn{
+    float: right;
+    margin-right: 14%;
+    background: #3f51b5;
+    color: white;
+}
+.subBtn{
+    margin-left: 14%;
+    background: #3f51b5;
+    color: white;
+}
+tr.mat-row{
+    height: 25%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .citInfo{
+    margin-left: 14%;
+}
+.subOptng{
+    float: right;
+    margin-right: 15%;
+}
+.cirtTbl{
+    width: 57%;
+    height: 150px;
+    border: 1px solid gray;
+}
+.subInfoTbl{
+    float: right;
+    width: 40%;
+    height: 150px;
+    border: 1px solid gray;
+    margin-top: -19%;
+}
+.prodierInfo{
+    width: 73%;
+    height: 163px;
+    border: 1px solid gray;
+}
+.ipInfo{
+    width: 80%;
+    height: 150px;
+    border: 1px solid gray;
+}
+.billingInpt1{
+    margin-left: 3%;
+} */
+.disbleByRole{
+    pointer-events: none;
+  }

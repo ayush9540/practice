@@ -1,0 +1,133 @@
+
+
+
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+
+mat-card{
+    background: #3f51b5;
+    color: white;
+    width: 103.2%;
+    padding: 8px;
+    margin-left: -2.5%;
+    margin-top: -2.2%;
+}
+table{
+    width: 100%;
+}
+.firstNmTd{
+    width: 16.1%;
+}
+.inptTd{
+    width: 34%;
+}
+.lastNmTd{
+    width: 16%;
+}
+.allowTd{
+    width: 34%;
+}
+.restTd{
+    width: 16%;
+}
+.offLineTd{
+    width: 13%;
+}
+.resourseTd{
+    width: 16%;
+}
+.inpt{
+    width: 95%;
+}
+.inpt2{
+    width: 100%;
+}
+.onlineDrp{
+    float: right;
+    width: 98%;
+}
+.row{
+    margin-top: -1%;
+}
+.row-One{
+    margin-top: -1.5%;
+}
+.mat-raised-button{
+    /* min-width: 45px; */
+}
+.btnGrp{
+    min-width: 45px;
+}
+.siteNmTd{
+    width: 11%;
+}
+.siteNmInpt{
+    width: 34%;   
+}
+.btnTd{
+    width: 11%;
+}
+.btnTd1{
+    width: 16%;
+}
+.siteBtn{
+
+}
+.phoneTd{
+    width: 14%;
+}
+.phoneInptTd{
+    width: 16%;
+}
+.phoneInpt{
+    width: 45%;
+}
+.numInptTd{
+
+}
+.numInpt{
+    width: 130%;
+    margin-left: -30%;
+}
+.btnRt{
+    min-width: 45px;
+    float: right;
+    margin-right: 1%;
+}
+.supervisorDrpTd{
+    width: 36%;
+}
+.emailInpt{
+    width: 100%;
+}
+.siteTbl{
+    margin-top: -1.4%;
+}
+fieldset{
+    margin-top: -0.5%;
+}
+.btn-row{
+    margin-top: 1%;
+}
+.donBtn{
+    float: right;
+}
+.alignBtn{
+    margin-left: 27%;
+}
+.sortOption{
+    /* float: right; */
+    width: 49%;
+    margin-right: 1%;
+}
+.onlinePtivTd{
+
+}
+ /* .mat-form-field{
+    height: 45px;
+  } */
+
+
+
+

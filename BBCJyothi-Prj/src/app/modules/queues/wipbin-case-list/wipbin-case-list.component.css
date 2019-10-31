@@ -1,0 +1,219 @@
+/* .Asyn-dropTbl, tr, td{
+    border: 1px solid gray;
+} */
+
+tr.mat-row{
+    cursor: pointer;
+}
+tr.mat-row:nth-child(odd){
+    background: #f2f2f2;
+}
+tr.mat-row.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+.datePicker{
+    margin-left: 11%;
+    width: 22.2%;
+}
+
+
+mat-card{
+    background: #3f51b5;
+    color: white;
+    padding: 1%;
+    width: 97%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+.wipbin-drop{
+    position: absolute;
+    top: 6.5%;
+    left: 1%;
+    width: 76%;
+}
+.wipdrop-td{
+    width: 10%;
+}
+.wipdrop-list{
+    width: 78%;
+    /* width: 17%; */
+}
+td.mat-cell{
+    /* text-align: center; */
+}
+th.mat-header-cell {
+    text-align: center;
+}
+th{
+    /* font-weight: bold; */
+    font-size: 15px;
+    background-color: #3f51b5;
+    color:white;
+}
+tr.mat-header-row{
+    height: 25px;
+}
+tr.mat-row{
+    height: 35px;
+}
+.mat-list{
+    width: 3%;
+}
+.wipbin-tbl{
+    width: 99%;
+    position: absolute;
+    top: 5.4%;
+    left: 1%;
+}
+wipbin-tbl{
+    border: 1px solid gray;
+}
+.wipdrop-list1{
+    width: 13%;
+}
+.wipdrop-inpt{
+    width: 19%;  
+}
+.leftOne{
+    margin-left: 3%;
+}
+.listBtn{
+    float: right;
+    margin-right: 0.5%;
+    margin-top: 1.5%;
+    color: white;
+}
+.plnrBrdr{
+    /* height: 230px;
+    border: 1px solid gray;
+    margin-left: -17%;
+    margin-right: 1%;
+    margin-top: 3.5%;
+    width: 131%;
+    overflow: auto; */
+
+    height: 295px;
+    border: 1px solid gray;
+    position: absolute;
+    left: 1%;
+    width: 98.2%;
+    overflow: auto;
+    top: 16%;
+}
+table.mat-table{
+    width: 100%;
+}
+th{
+    font-size: 15px;
+    background-color: #3f51b5;
+    color:white
+}
+
+.myTitle{
+    position: absolute;
+    top: 69%;
+    left: 0%;
+    width: 99%;
+}
+.titleTd{
+    width: 1%;
+}
+.dlsInptTitl{
+    width: 20%;
+}
+.dslSriTitlInpt{
+    width: 100%;
+    /* position: absolute;
+    top: 71%;
+    left: 4%; */
+}
+.itme-tbl{
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 1%;
+}
+.btn1{
+    float: right;
+    margin-right: 1%;
+    color: white;
+}
+.itm-grp{
+    position: absolute;
+    width: 100%;
+    top: 79%;
+    left: 0%;
+}
+
+.itm-inpt{
+    width: 50%;
+}
+.itm-td{
+    width: 10%;
+}
+
+.pagination-row{
+    margin-top: 49%;
+}
+
+.td{
+    border-right: 1px solid #0000001f;
+    padding: 5px;
+}
+
+.th {
+    border-right: 1px solid #0000001f;
+}
+.thOne{
+
+}
+.thTwo{
+
+}
+.thThree{
+
+}
+.thFour{
+
+}
+.thFive{}
+.thSix{}
+.thSeven{
+    width: 22%;
+}
+.thEight{
+    width: 7%;
+}
+.tdOne{}
+.tdTwo{}
+.tdThree{}
+.tdFour{}
+.tdFive{}
+.tdSix{
+    width: 27%;
+}
+.tdSeven{}
+.tdEight{}
+
+
+
+td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+    padding-left: 3px;
+    width: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+[ 
+    { 
+        "objid": 268680168, 
+        "idNumber": "1794235", 
+        "lanSubnet": null, 
+        "lanEndUserIp": null, 
+        "ipStatus": "IPs_Not_Assigned", 
+        "ipFrom": "", 
+        "ipTo": "" 
+    },
+    { 
+        "objid": 268680168, 
+        "idNumber": "1794235", 
+        "lanSubnet": null, 
+        "lanEndUserIp": null, 
+        "ipStatus": "IPs_Not_Assigned", 
+        "ipFrom": "", 
+        "ipTo": "" 
+    },
+    { 
+        "objid": 268680168, 
+        "idNumber": "1794235", 
+        "lanSubnet": null, 
+        "lanEndUserIp": null, 
+        "ipStatus": "IPs_Not_Assigned", 
+        "ipFrom": "", 
+        "ipTo": "" 
+    },
+    { 
+        "objid": 268680168, 
+        "idNumber": "1794235", 
+        "lanSubnet": null, 
+        "lanEndUserIp": null, 
+        "ipStatus": "IPs_Not_Assigned", 
+        "ipFrom": "", 
+        "ipTo": "" 
+    }
+]

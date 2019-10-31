@@ -1,0 +1,92 @@
+.container{
+    width: 100%;
+    height: 200px;
+    border: 1px solid gray;
+    margin-top: 1.5%;
+    overflow: auto;
+}
+mat-card{
+    background: #3f51b5;
+    color: white;
+    padding: 0.5%;
+    margin-top: -2.2%;
+    margin-left: -2.5%;
+    width: 103%;
+    padding-left: 1%;
+}
+tr.mat-row:nth-child(odd){
+    background: #f2f2f2;
+}
+tr.mat-row.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+.td{
+    border-right: 1px solid #0000001f;
+    padding: 5px;
+}
+
+.th {
+    border-right: 1px solid #0000001f;
+    padding-left: 4px;
+}
+.siidBtn{
+    background: #3f51b5;
+    color: white;
+    margin-left: 2%;
+}
+.descInpt{
+    width: 56.5%;
+}
+
+table{
+    width: 100%;
+}
+.labelTd{
+    width: 31%;
+}
+.labelTd2{
+    width: 19%;
+}
+.inputTd{
+    width: 20%;
+}
+
+.inptDisc{
+    width: 95%;
+}
+tr.mat-header-row {
+    height: 25px;
+}
+th {
+    font-size: 15px;
+    background-color: #3f51b5;
+    color: white;
+    height: 20%;
+}
+.title{
+    width: 45%;
+}
+.siidLbl{
+    width: 11.5%;
+}
+.productLbl{
+    width: 16%;
+}
+
+.descTd{
+    width: 19%;
+}
+
+.descTbl{
+    margin-top: -1%;
+}
+tr.mat-row {
+    height: 35px;
+}
+
+* {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+

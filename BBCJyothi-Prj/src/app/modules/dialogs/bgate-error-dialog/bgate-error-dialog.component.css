@@ -1,0 +1,138 @@
+.custIdLbl{
+
+}
+.custIdInpt{
+    margin-top: -2%;
+}
+.custNamInpt{
+    margin-top: -2%;
+}
+.nameLbl{
+
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+table{
+    width: 100%;
+}
+.custTd{
+
+}
+.custDrop{
+    width: 45%;
+    margin-left: 7%;
+}
+.billerLbl{
+    /* margin-left: 25%; */
+}
+.billerInpt{
+    margin-top: -2%;
+}
+.inptItm{
+    margin-left: 1.5%;
+}
+.errorDiv{
+    width: 100%;
+    height: 190px;
+    border: 1px solid gray;
+    overflow: auto;
+}
+.recordLbl{
+
+}
+.RecordInpt{
+    margin-left: 4%;
+}
+.errorLbl{
+
+}
+.errorInpt{
+    margin-left: 1%;
+}
+.errordesLbl{
+
+}
+.errordesInpt{
+
+}
+.errorLbl, .errordesLbl{
+    margin-left: 3.5%;
+}
+.errorBtn{
+    background: #3f51b5;
+    color: white;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1.5%;
+}
+.messageLbl{
+  
+}
+.textInpt{
+    width: 95%;
+    float: right;
+    height: 86px;
+    margin-right: 2%;
+}
+.messageSpn{
+    margin-top: 2%;
+}
+.span{
+    margin-top: 2%;
+}
+.messageTbl{
+    width: 13%;
+    margin-top: 4%;
+}
+.resubBtn{
+    margin-left: 11%;
+    background: #3f51b5;
+    color: white;
+}
+.errorTd{
+    width: 10%;
+}
+.resubTd{
+    width: 12%;
+}
+mat-card{
+    background: #3f51b5;
+    color: white;
+    padding: 0.5%;
+    margin-top: -2.2%;
+    margin-left: -2.5%;
+    width: 103.2%;
+    padding-left: 1%;
+}
+tr.mat-row:nth-child(odd){
+    background: #f2f2f2;
+}
+tr.mat-row.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+.td{
+    border-right: 1px solid #0000001f;
+    padding: 5px;
+}
+.th {
+    border-right: 1px solid #0000001f;
+    padding-left: 4px;
+}
+.errordes{
+    width: 74%;
+    margin-left: 1.3%;
+}
+tr.mat-header-row{
+    height: 21px;
+    background: #3f51b5;
+}
+th.mat-header-cell {
+    text-align: left;
+    color: white;
+}
+
+* {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}

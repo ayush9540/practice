@@ -1,0 +1,27 @@
+/* Main Header START*/
+.main-header{
+    background-color: black;
+    color: white;
+    font-size: 11pt;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 40px;
+}
+.header-att-icon{
+    width: 50px;
+    position: relative;
+}
+.header-fill-remaining-space{
+    flex: 1 1 auto;
+}
+.header-space{
+    padding: 2%;
+}
+.white{
+    color: white;
+}
+
+/* Main Header END*/

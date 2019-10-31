@@ -1,0 +1,74 @@
+<div>
+  <mat-card>Case ID {{caseId}}: Previous Cases <p (click)="closeDialog()" class="close">&times;</p>
+  </mat-card>
+  <div class="prevCase">
+    <mat-label>Previous Cases for </mat-label>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <td>
+          <mat-label>Time Frame:</mat-label>
+        </td>
+        <td>(
+          <input maxlength="3" [(ngModel)]="timeFrame">&nbsp; days
+        </td>
+        <td>
+          <button color="primary" (click)="loadPrevCases('contact')" class="" mat-raised-button>List by Contact</button>
+        </td>
+        <td>
+          <button color="primary" (click)="loadPrevCases('site')" class="" mat-raised-button>List by Site</button>
+        </td>
+        <td>
+          <button color="primary" (click)="openCase()" [disabled]="openDisabled" mat-raised-button disabled>Open</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bbwDraggableTable>
+
+      <ng-container matColumnDef="caseId">
+        <th mat-header-cell class="th" *matHeaderCellDef> Case ID</th>
+        <td mat-cell class="td" *matCellDef="let prevCase"> {{prevCase.idNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="createDate">
+        <th mat-header-cell class="th" *matHeaderCellDef> Create Date </th>
+        <td mat-cell class="td" *matCellDef="let prevCase"> {{prevCase.age}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="condition">
+        <th mat-header-cell class="th" *matHeaderCellDef> Condition </th>
+        <td mat-cell class="td" *matCellDef="let prevCase"> {{prevCase.condition}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell class="th" *matHeaderCellDef> Status </th>
+        <td mat-cell class="td" *matCellDef="let prevCase"> {{prevCase.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell class="th" *matHeaderCellDef> Title</th>
+        <td mat-cell class="td" *matCellDef="let prevCase"> {{prevCase.title}} </td>
+      </ng-container>
+
+      <!-- <ng-container matColumnDef="createDate">
+        <th mat-header-cell class="th" *matHeaderCellDef> Create Date </th>
+        <td mat-cell class="td" *matCellDef="let prevCase"> {{prevCase.creationTime}} </td>
+      </ng-container> -->
+
+      <ng-container matColumnDef="caseType">
+        <th mat-header-cell class="th" *matHeaderCellDef> Case Type </th>
+        <td mat-cell class="td" *matCellDef="let prevCase"> {{prevCase.xCaseType}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns;let index = index"
+        [ngClass]="{'highlight': selectedAct == row}" (click)="setClickedRow(row,index)"></tr>
+
+    </table>
+  </div>
+</div>
+<mat-progress-spinner style="margin-top:-15%;left: 45%;z-index:125;" *ngIf="isLoading" color="success"
+  mode="indeterminate"></mat-progress-spinner>

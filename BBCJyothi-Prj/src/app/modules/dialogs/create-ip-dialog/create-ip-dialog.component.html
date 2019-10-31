@@ -1,0 +1,33 @@
+<mat-toolbar>Email Log<span class="close" (click)="cancelDialog()">&times;</span></mat-toolbar><br>
+<mat-progress-spinner style="margin-top:8%;left: 45%;z-index:125;position: absolute;" *ngIf="isLoading" color="success" mode="indeterminate"></mat-progress-spinner>
+<div>
+  <div class="marginTop">
+    <mat-label>Sender:</mat-label>
+    <mat-form-field class="sender">
+      <input matInput disabled [(ngModel)]="createIpLetter.loginName">
+    </mat-form-field>
+  </div>
+  <div class="startTime">
+    <mat-label>Start Time:</mat-label>
+    <mat-form-field class="timeInput">
+      <input matInput disabled [(ngModel)]="createIpLetter.startTime">
+    </mat-form-field>
+  </div>
+  <div class="marginTop">
+    <mat-label>Recipients:</mat-label>
+    <mat-form-field class="recipient">
+      <input matInput [(ngModel)]="toList">
+    </mat-form-field>
+  </div>
+  <div class="marginTop">
+    <mat-label>CC List:</mat-label>
+    <mat-form-field class="ccList">
+      <input matInput [(ngModel)]="ccList">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-label>Message:</mat-label><br>
+    <textarea [(ngModel)]="createIpLetter.message"></textarea>
+  </div>
+</div><br>
+<button class="sendButton" (click)="sendMail()" mat-raised-button color="primary">Send</button>

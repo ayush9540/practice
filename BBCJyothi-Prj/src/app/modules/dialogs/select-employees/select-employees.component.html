@@ -1,0 +1,106 @@
+<mat-progress-spinner style="left: 44%;z-index:125;position: fixed;margin-top: 10%;" *ngIf="isLoading" color="success"
+  mode="indeterminate"></mat-progress-spinner>
+<div>
+  <mat-card>Select Employees <p (click)="closeDialog()" class="close">&times;</p>
+  </mat-card>
+</div>
+<div class="listEmployees">
+  <mat-label>Select Employees Whose</mat-label>
+</div>
+<table>
+  <tr>
+    <td class="optionTd">
+      <mat-form-field class="sortOption">
+        <mat-select [(ngModel)]="fieldName">
+          <mat-option *ngFor="let sortOpt of sortOption" [value]="sortOpt">{{sortOpt}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td class="optionTd">
+      <mat-form-field class="sortOption">
+        <mat-select [(ngModel)]="operator">
+          <mat-option *ngFor="let sortOpt of subOption" [value]="sortOpt">{{sortOpt}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="inpt">
+        <input matInput [(ngModel)]="fieldValue" type="text">
+      </mat-form-field>
+    </td>
+    <td class="optionTd">
+      <mat-form-field class="sortOption">
+        <mat-select [(ngModel)]="sortby">
+          <mat-option *ngFor="let sortOpt of optionValue" [value]="sortOpt">{{sortOpt}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td class="listBtnTd">
+      <button mat-raised-button color="primary" (click)="loadEmployeeData()" class="listBtn" mat-raised-button>List</button>
+    </td>
+  </tr>
+</table>
+<div class="empData">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bbwDraggableTable>
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell class="th" *matHeaderCellDef> First Name </th>
+      <td mat-cell class="td" *matCellDef="let selectEmployees"> {{selectEmployees.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell class="th" *matHeaderCellDef> Last Name </th>
+      <td mat-cell class="td" *matCellDef="let selectEmployees"> {{selectEmployees.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="loginName">
+      <th mat-header-cell class="th" *matHeaderCellDef> Login Name </th>
+      <td mat-cell class="td" *matCellDef="let selectEmployees"> {{selectEmployees.loginName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="attId">
+      <th mat-header-cell class="th" *matHeaderCellDef> ATTUID </th>
+      <td mat-cell class="td" *matCellDef="let selectEmployees"> {{selectEmployees.userAttuid}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="office">
+      <th mat-header-cell class="th" *matHeaderCellDef> Office </th>
+      <td mat-cell class="td" *matCellDef="let selectEmployees"> {{selectEmployees.psite}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nodeId">
+      <th mat-header-cell class="th" *matHeaderCellDef> Node Id </th>
+      <td mat-cell class="td" *matCellDef="let selectEmployees"> {{selectEmployees.nodeId}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns; let index = index" (dblclick)="openSelectEmployeeDetails()"
+      [ngClass]="{'highlight': selectedEmp == row}" (click)="setClickedRow(row,index)"></tr>
+  </table>
+
+</div>
+<table>
+  <tr>
+    <td class="inptTd">
+      <mat-form-field class="items">
+        <input matInput [value]="selectEmployees.length" type="text">
+      </mat-form-field>
+      <mat-label>Items </mat-label>
+    </td>
+    <td>
+      <button mat-raised-button color="primary" class="listBtn" [disabled]="desibledButton" mat-raised-button>Generated
+        Id </button>
+    </td>
+    <td>
+      <button mat-raised-button color="primary" (click)="newSelectEmployeeDetails()" class="listBtn" mat-raised-button>New
+      </button>
+    </td>
+    <td>
+      <button mat-raised-button color="primary" (click)="openSelectEmployeeDetails()" class="listBtn" [disabled]="desibledButton"
+        mat-raised-button>Open </button>
+    </td>
+    <td>
+      <button mat-raised-button color="primary" class="doneBtn" (click)="closeDialog()" mat-raised-button>Done </button>
+    </td>
+  </tr>
+</table>

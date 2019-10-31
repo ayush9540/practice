@@ -1,0 +1,252 @@
+<div>
+  <mat-card>Case <p (click)="closeDialog();" class="close">&times;</p>
+  </mat-card>
+  <div class="container">
+    <table class="custTbl">
+      <tr>
+        <td class="custIdTd">
+          <mat-label>Cust ID/Name: </mat-label>
+        </td>
+        <td class="custNameTd">
+          <mat-form-field class="">
+            <input matInput type="text">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="custNamInpt">
+            <input matInput type="text">
+          </mat-form-field>
+        </td>
+        <td class="btnTd">
+          <button mat-raised-button class="flashBtn" color="primary" mat-button>...</button>
+        </td>
+      </tr>
+    </table>
+    <table class="reportTbl">
+      <tr>
+        <td class="custIdTd">
+          <mat-label>Reported By(F/L): </mat-label>
+        </td>
+        <td class="custNameTd">
+          <mat-form-field class="">
+            <input matInput type="text">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="reportInpt">
+            <input matInput type="text">
+          </mat-form-field>
+        </td>
+        <td>
+          <button mat-raised-button class="donBtn" color="primary" mat-button>...</button>
+        </td>
+        <td class="btnTd">
+          <button mat-raised-button class="flashBtn" color="primary" mat-button>Find Caller</button>
+        </td>
+      </tr>
+    </table>
+    <table class="reportTbl">
+      <tr>
+        <td class="custIdTd">
+          <mat-label>Main Phone: </mat-label>
+        </td>
+        <td class="custNameTd">
+          <mat-form-field class="">
+            <input matInput type="text">
+          </mat-form-field>
+        </td>
+        <!-- <td>
+          <mat-label>Service Indicator: </mat-label>
+        </td> -->
+        <td class="mainDropTd">
+          <mat-form-field class="salesDrop">
+            <mat-select [(ngModel)]="selectedMainDrop">
+              <mat-option *ngFor="let mainPhone of mainPhonDropDown" [value]="mainPhone">{{mainPhone}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-label>Expedite: </mat-label>
+        </td>
+        <td>
+          <mat-checkbox></mat-checkbox>
+        </td>
+        <td>
+          <button mat-raised-button class="flashBtn" color="primary" mat-button>Flashes</button>
+        </td>
+      </tr>
+    </table>
+    <table class="reportTbl">
+      <tr>
+        <td class="custIdTd">
+          <mat-label>Email: </mat-label>
+        </td>
+        <td>
+          <mat-form-field class="emailInpt">
+            <input matInput type="text">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-label>Service Indicator: </mat-label>
+        </td>
+        <td>
+          <mat-form-field class="serviceDrop">
+            <mat-select [(ngModel)]="selectedIndicator">
+              <mat-option *ngFor="let servIndicator of serviceIndicator" [value]="servIndicator">{{servIndicator}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-checkbox>Parent Case</mat-checkbox>
+        </td>
+      </tr>
+    </table>
+    <table class="reportTbl">
+      <tr>
+        <td class="custIdTd">
+          <mat-label>Case Title: </mat-label>
+        </td>
+        <td>
+          <mat-form-field class="caseTitleInpt">
+            <input matInput type="text">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <table class="reportTbl">
+      <tr>
+        <!-- <td class="custIdTd">
+          <mat-label>Project#: </mat-label>
+        </td>
+        <td class="custNameTd">
+          <mat-form-field class="">
+            <input matInput type="text">
+          </mat-form-field>
+        </td> -->
+        <td class="custIdTd">
+          <mat-label>Sales Offer: </mat-label>
+        </td>
+        <td>
+          <mat-form-field class="offerDrop">
+            <mat-select [(ngModel)]="selectedSalesValue">
+              <mat-option *ngFor="let selectedSls of salesDropDown" [value]="selectedSls">{{selectedSls}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <!-- <td>
+          <mat-checkbox>Parent Case</mat-checkbox>
+        </td> -->
+      </tr>
+    </table>
+  </div>
+  <div class="tabGrp">
+    <mat-tab-group>
+      <mat-tab label="Case">
+        <div>
+          <table class="typeTbl">
+            <tr>
+              <td class="typeTd">
+                <mat-label>Type: </mat-label>
+              </td>
+              <td class="typeInpt">
+                <mat-form-field class="typeDrop">
+                  <mat-select [(ngModel)]="selectedType">
+                    <mat-option *ngFor="let selectType of typeDropDown" [value]="selectType">{{selectType}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td class="priorityTd">
+                <mat-label>Priority/Severity: </mat-label>
+              </td>
+              <td>
+                <mat-form-field class="typeDrop">
+                  <mat-select [(ngModel)]="selectedPriority">
+                    <mat-option *ngFor="let priorityOpt of prioritySeverityOpt" [value]="priorityOpt">{{priorityOpt}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          <table class="typeTbl2">
+            <tr>
+              <td class="typeTd">
+                <mat-label>Sub-Type: </mat-label>
+              </td>
+              <td class="typeInpt">
+                <mat-form-field class="typeDrop">
+                  <mat-select [(ngModel)]="selectedSubTyp">
+                    <mat-option *ngFor="let selectSubTyp of subTypeOption" [value]="selectSubTyp">{{selectSubTyp}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td class="priorityTd">
+                <mat-label>Origin: </mat-label>
+              </td>
+              <td>
+                <mat-form-field class="typeDrop">
+                  <mat-select [(ngModel)]="selectedOrgOpt">
+                    <mat-option *ngFor="let selectOrg of originOption" [value]="selectOrg">{{selectOrg}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          <table class="typeTbl2">
+            <tr>
+              <td class="typeTd">
+                <mat-label>Cust Qualifier: </mat-label>
+              </td>
+              <td class="typeInpt">
+                <mat-form-field class="typeDrop">
+                  <mat-select [(ngModel)]="selectedCustOpt">
+                    <mat-option *ngFor="let selectCust of custQaliOption" [value]="selectCust">{{selectCust}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td class="priorityTd">
+                <mat-label>Cust Premises: </mat-label>
+              </td>
+              <td>
+                <mat-form-field class="typeDrop">
+                  <mat-select [(ngModel)]="selectedCustPromise">
+                    <mat-option *ngFor="let selectPromise of custPromiseOpt" [value]="selectPromise">{{selectPromise}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          <textarea>
+
+          </textarea>
+
+
+        </div>
+
+
+
+      </mat-tab>
+      <mat-tab label="More Info"> Content 2 </mat-tab>
+      <mat-tab label="Prev. Cases"> Content 3 </mat-tab>
+      <mat-tab label="Site/Contact"> Content 3 </mat-tab>
+      <mat-tab label="Spec. Consid"> Content 3 </mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="btnGrp">
+    <button mat-raised-button class="serviceBtn1" color="primary" mat-button>Services</button>
+    <button mat-raised-button class="serviceBtn" color="primary" mat-button>Save</button>
+    <button mat-raised-button class="serviceBtn" color="primary" mat-button>Hang Up</button>
+    <button mat-raised-button class="serviceBtn" color="primary" mat-button>Dispatch</button>
+    <button mat-raised-button class="serviceBtn" color="primary" mat-button>New Case</button>
+    <button mat-raised-button class="serviceBtn" color="primary" mat-button>New Caller</button>
+    <button mat-raised-button class="serviceBtn" color="primary" mat-button>Done</button>
+  </div>
+</div>

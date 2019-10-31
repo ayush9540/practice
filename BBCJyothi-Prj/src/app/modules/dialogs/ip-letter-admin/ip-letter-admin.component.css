@@ -1,0 +1,269 @@
+
+mat-card{
+    background: #3f51b5;
+    color: white;
+    width: 103.2%;
+    padding: 8px;
+    margin-left: -2.5%;
+    margin-top: -2.5%;
+}
+.savAsStatus{
+    float: right;
+}
+.labelGrp{
+    font-weight: bold;
+}
+.ipLetter{
+    height: 150px;
+}
+.statusDrop{
+    width: 24%;
+    height: 140px;
+    /* border: 1px solid gray; */
+    display: inline-block;
+}
+.versionTd{
+    width: 9.2%;
+}
+tr.mat-row:nth-child(odd){
+    background: #f2f2f2;
+}
+tr.mat-row.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+.closeBtn{
+    float: right;
+    margin-right: 0.8%;
+    margin-top: -0.1%;
+    cursor: pointer;
+    font-size: 20px;
+}
+.version{
+    width: 75%;
+    height: 140px;
+    border: 1px solid gray;
+    float: right;
+    overflow: auto;
+}
+
+.empFirstName{
+    width: 1.5%;
+}
+.verLbl{
+    float: right;
+    margin-top: 7%;
+    font-weight: bold;
+}
+.statuDrop{
+    /* margin-left: 14px; */
+    width: 66%;
+}
+.statusLbl{
+    margin-left: 3px;
+}
+table{
+    width: 100%;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+} 
+tr.mat-header-row{
+    height: 25px;
+    background: #3f51b5;
+}
+th.mat-header-cell{
+    color: white;
+    width: 1%;
+}
+tr.mat-footer-row, tr.mat-row {
+    height: 38px;
+}
+.ipLetterTab{
+    border: 1px solid gray;
+    margin-left: 0.2%;
+    margin-right: 0.2%;
+    height: 490px;;
+}
+/* Edit Code */
+.editVersion{
+    margin-left: 1%;
+}
+.authorInpt{
+    width: 98%;
+}
+.editAuthor{
+    float: right;
+    /* margin-right: 1%; */
+    width: 40%;
+    border: 1px solid gray;
+}
+.auterTd{
+    width: 12%;
+}
+.typeDisplay{
+    width: 12%;
+}
+.change{
+    width: 39.5%;
+}
+.modifTd{
+    width: 9.2%;
+}
+.versionTbl{
+    margin-top: -1%;
+}
+.modifiedTbl{
+    margin-top: -2.5%;
+}
+.descLbl{
+    margin-left: 2px;
+}
+.descInpt{
+    width: 99%;
+}
+.descript{
+    margin-top: -2%;
+}
+.descTbl{
+    margin-top: -2.5%;
+}
+.descTd{
+    width: 9.2%;
+}
+.insertTd{
+    width: 9.2%;
+}
+.insertDrop{
+    width: 39.5%;
+}
+.savaTd{
+    width: 30%;
+}
+.saveDrop{
+    float: right;
+    margin-right: 2%;
+}
+.insertTbl{
+    margin-top: -2.5%;
+}
+.txtarea{
+    float: right;
+    width: 89%;
+    height: 195px;
+    margin-right: 1%;
+    background: fixed no-repeat;
+}
+.contant{
+    width: 7%;
+    /* border: 1px solid; */
+    display: inline-block;
+    margin-top: 6%;
+    margin-left: 3px;
+}
+.contLbl{
+
+}
+.newBtn{
+    margin-left: 2%;
+}
+.deletBtn, .savBtn{
+    margin-left: 21%;
+}
+.cencelBtn{
+    float: right;
+    margin-right: 2%;
+}
+.btnGrp{
+    padding-top: 2%;
+}
+
+/* view */
+.txtLbl{
+
+}
+.sendLbl{
+    margin-left: 1%;
+    /* font-weight: bold; */
+}
+.sendInpt{
+    margin-left: 6%;
+    width: 85%;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+.ccLbl{
+    margin-left: 1%;
+}
+.subjectLbl{
+    margin-left: 1%;
+}
+.ccInpt{
+    margin-left: 8.7%;
+    width: 85%;
+}
+.subjectInpt{
+    margin-left: 6.1%;
+    width: 85%;
+}
+.msgLbl{
+    margin-left: 1%;
+}
+.txtarea2{
+    float: right;
+    margin-right: 3%;
+    width: 84.5%;
+    height: 225px;
+}
+.txtLbldiv{
+    margin-top: 1%;
+    margin-left: 12%;
+}
+.sendTbl{
+    margin-top: -1%;
+}
+.ccTbl{
+    margin-top: -2%;
+}
+.msgTbl{
+    margin-top: -2%;
+}
+.btnDiv{
+    margin-top: 21%;
+}
+.sendBtn{
+    float: right;
+    margin-right: 3%;
+    margin-top: -0.5%;
+}
+
+
+
+
+
+*{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

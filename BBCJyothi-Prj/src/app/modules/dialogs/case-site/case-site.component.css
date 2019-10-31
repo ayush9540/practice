@@ -1,0 +1,323 @@
+
+.mat-card{
+    background: #3f51b5;
+    color: white;
+    padding: 0.5%;
+    margin-top: -2.2%;
+    margin-left: -2%;
+    width: 102.5%;
+    padding-left: 1%;
+}
+table{
+    width: 100%;
+}
+.tableData{
+    width: 80%;
+    height: 135px;
+    border: 1px solid gray;
+    display: inline-block;
+    overflow: auto;
+}
+.tableData2{
+    width: 80%;
+    height: auto;
+    /* height: 450px; */
+    border: 1px solid gray;
+    display: inline-block;
+    margin-top: 0.5%;
+}
+.btnGrop{
+    width: 14%;
+    height: 600px;
+    /* border: 1px solid gray; */
+    float: right;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+
+tr.mat-row:nth-child(odd){
+    background: #f2f2f2;
+}
+tr.mat-row.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+
+tr.mat-header-row{
+    height: 25px;
+}
+tr.mat-row {
+    height: 31px;
+}
+
+
+.th{
+    border-right: 1px solid #0000001f;
+    padding: 5px;
+}
+.td{
+    border-right: 1px solid #0000001f;
+    padding: 5px;
+}
+.flashBtn{
+    float: right;
+}
+.addBtn{
+    float: right;
+}
+.siteBtn{
+    float: right;
+    margin-top: 62%;
+}
+.contactListTbl{
+    margin-top: -1%;
+}
+.custIdTd{
+    width: 13%;
+}
+.custNameTd{
+
+}
+.sortOpt{
+    float: right;
+}
+.sortOptTd{
+    width: 15%;
+}
+.statusTd{
+
+}
+.subTypeDrop{
+
+}
+.custTypeTd{
+    width: 13%;
+}
+.solInpt{
+    width: 95%;
+}
+.custDrop{
+    width: 80%;
+}
+.custDropTd{
+    width: 14%;
+}
+.contactLbl{
+    /* margin-left: 31%; */
+}
+.siteTbl{
+    margin-top: -1.5%;
+}
+.siteTbl2{
+    margin-top: -2.5%;
+}
+th{
+    font-size: 15px;
+    background-color: #3f51b5;
+    color: white;
+}
+tr.mat-header-row{
+    height: 25px;
+}
+
+/* Address Tab */
+
+.adresTd{
+   width: 13%; 
+}
+.adrsInptTd{
+    width: 64%;
+}
+.cityTd{
+
+}
+.cityInpt{
+    /* width: 25%; */
+}
+.stateInpt{
+    width: 15%;
+    margin-left: 3.5%;
+}
+.zipInpt{
+    width: 25%;
+    margin-left: 3.5%;
+}
+.countryInptTd{
+    width: 30%;
+}
+.timeZonTd{
+    width: 11%;
+}
+.adrsTbl{
+    margin-top: -1.3%;
+}
+.alignTbl{
+    margin-top: -2.5%;    
+}
+.alignTbl1{
+
+}
+.selectBtn{
+    float: right;
+}
+.adrsInpt{
+    width: 100%;
+}
+.accBtn{
+
+}
+.accountInpt{
+    
+}
+.geoCodTd{
+    width: 23%;
+}
+.accountTd{
+    width: 32%;
+}
+.accountInpt{
+    width: 95%;
+}
+.accountInpt2{
+    width: 54%;
+}
+.ccLbl{
+    margin-left: 13.2%;
+}
+.areaCodLbl{
+    margin-left: 19.5%;
+}
+.phoneTd{
+    width: 23%;
+}
+.phoneInpt{
+
+}
+.phoneInpt2{
+    width: 60%;
+}
+/* contact Tabs */
+.contact{
+    width: 96%;
+    height: 325px;
+    border: 1px solid gray;
+    margin-left: 2%;
+    margin-top: 4%;
+    overflow: auto;
+}
+/* Note tab */
+.specialOpt{
+
+}
+.noteSelect{
+    width: 95%;
+    height: 291px;
+    border: 1px solid gray;
+    margin-left: 2%;
+}
+.noteLbl{
+    margin-left: 7%;
+}
+.notesTd{
+    width: 24%;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+/* Hierarhy tab */
+.parentDiv{
+    width: 73%;
+    height: 150px;
+    border: 1px solid gray;
+    display: inline-block;
+    margin-left: 1%;
+    margin-top: 1%;
+    overflow: auto;
+}
+.btnDiv{
+    width: 24%;
+    height: 150px;
+    /* border: 1px solid gray; */
+    float: right;
+    margin-top: 1%;
+}
+.childDiv{
+    width: 73%;
+    height: 150px;
+    border: 1px solid gray;
+    display: inline-block;
+    margin-left: 1%;
+    margin-top: 1%;
+    overflow: auto;
+}
+.btnDiv2{
+    width: 24%;
+    height: 150px;
+    border: 1px solid gray;
+    float: right;
+    margin-top: 1%;
+}
+.parentLbl{
+    padding-top: 1%;
+}
+.rightBtn{
+    display: inline-block;
+}
+.dotBtn{
+    float: right;
+    margin-right: 1%;
+}
+.removBtn{
+    margin-top: 5%;
+    float: right;
+    margin-right: 1%;
+}
+.parent{
+    margin-left: 1%;
+}
+
+/* Bill/Ship To */
+.billToInpt{
+    width: 99%;
+}
+.newAdrsBtn{
+    float: right;
+    margin-top: 2%;
+}
+.billSort{
+    width: 19%;
+}
+.billAdrsTd{
+    width: 22%;
+}
+.selectAdrsTd{
+    width: 15%;
+}
+.shipTbl{
+    margin-top: 7%;
+}
+
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+.contractIdTd{
+    width: 13%;
+}
+.endDate{
+    width: 9%
+}
+.unitPurch{
+    width: 11%;
+}
+.unitUsed{
+    width: 10%;
+}
+.phoneResp{
+
+}
+
+
+
+
+

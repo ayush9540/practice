@@ -1,0 +1,33 @@
+mat-card{
+    background: #3f51b5;
+    padding: 3%;
+    color: white;
+    width: 117.8%;
+    margin-left: -11.9%;
+    margin-top: -12%;
+}
+.yankInpt{
+    margin-left: 14%;
+    width: 70%;
+}
+.yankDrop{
+    margin-left: 8%;
+    width: 70%;
+}
+.yankBtn{
+    float: right;
+    height: 84%;
+}
+
+.cancelBtn{
+    height: 84%;
+}
+.cancelRow{
+    margin-top: -8%;
+}
+.enterId{
+    margin-top: 5%;
+}
+
+
+

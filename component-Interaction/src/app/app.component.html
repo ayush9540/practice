@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/employee" routerLinkActive="active">employee</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/departmentList" routerLinkActive="active">department List</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Parent Component</h3>
+            <h5>Data of Parent: {{myParentData}}</h5>
+            <h5>Data of Child: {{Cdata_from_ParentComp}}</h5>
+            <br>
+            <app-child [Pdata_from_ChildComp]="myParentData" (someChildData)="xyz($event)" [SomeParentData]="greeting"></app-child><br>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <input type="text" [ngModel]="name" (ngModelChange)="fireEvent($event)">
+                <label>Welcome {{name}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <input type="text" [ngModel]="myname" (ngModelChange)="myname = $event">
+                <label>Welcome {{myname}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <input #inputName type="text" [(ngModel)]="customerName">
+                <label>hello {{customerName}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <img [src]="imgUrl" width="100px">
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="col-md-3">
+                    <button (click)="incrementCount()" class="btn btn-info">click</button>
+                </div>
+                <div class="col-md-8">
+                    <p>clicked {{count}} times</p>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-md-6">
+                <button (click)="toggleData()" class="btn" [ngClass]="collapsed ? 'btn-success' : 'btn-danger'">{{ collapsed ? "Show" : "Hide" }}</button>
+            </div>
+            <div class="col-md-6" *ngIf="!collapsed">
+                <p>hey this is the long text, That I want to toggle it once the button is clicked</p>
+            </div>
+        </div>
+    </div>
+
+</div> -->

@@ -1,0 +1,21 @@
+<!-- 
+<p>
+  {{message}}
+</p>
+welcome
+<button mat-flat-button color="primary" (click)="onNoClick()">close</button> -->
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <header class="w3-container w3-teal"> 
+    Message
+    <span class="close" (click)="onNoClick()">&times;</span>
+    </header>
+    <div class="body">
+      {{message}}
+    </div>
+    <footer class="footer">
+      <button mat-flat-button color="primary" (click)="onNoClick()">Close</button>
+    </footer>
+  </div>
+</div>

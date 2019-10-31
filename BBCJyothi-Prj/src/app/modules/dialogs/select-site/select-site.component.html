@@ -1,0 +1,186 @@
+<div>
+  <mat-card>Select Sites <p (click)="closeDialog()" class="close">&times;</p>
+  </mat-card>
+  <table>
+    <tr>
+      <td class="listTd">
+        <mat-label>List Site Whose: </mat-label>
+      </td>
+      <td class="siteTypeTd">
+        <mat-label class="siteTypLbl">Site Type: </mat-label>
+      </td>
+      <td>
+        <mat-form-field class="status">
+          <mat-select [(ngModel)]="siteValue">
+            <mat-option *ngFor="let selectValue of statusValue" [value]="selectValue">{{selectValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="siteTabl">
+    <tr>
+      <td class="listTd">
+        <mat-label>Site ID/Name: </mat-label>
+      </td>
+      <td class="siteIdName">
+        <mat-form-field class="siteIdInpt">
+          <input matInput [(ngModel)]="siteId" type="text">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="siteNameInpt">
+          <input matInput [(ngModel)]="siteName" type="text">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="siteTabl">
+    <tr>
+      <td class="listTd">
+        <mat-label>Address/City/State: </mat-label>
+      </td>
+      <td class="addressTd">
+        <mat-form-field class="addressInpt">
+          <input matInput [(ngModel)]="Address" type="text">
+        </mat-form-field>
+      </td>
+      <td class="cityTd">
+        <mat-form-field class="cityInpt">
+          <input matInput [(ngModel)]="city" type="text">
+        </mat-form-field>
+      </td>
+      <td class="stateTd">
+        <mat-form-field class="stateInpt">
+          <input matInput [(ngModel)]="state" type="text">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="siteTabl">
+    <tr>
+      <td class="listTd">
+        <mat-label>Account ID/Name: </mat-label>
+      </td>
+      <td class="siteIdName">
+        <mat-form-field class="siteIdInpt">
+          <input matInput [(ngModel)]="accountId" type="text">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="siteNameInpt">
+          <input matInput [(ngModel)]="accountName" type="text">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="siteTabl">
+    <tr>
+      <td class="listTd">
+        <mat-checkbox [(ngModel)]="siteStatus">Include Inactive Sites</mat-checkbox>
+      </td>
+      <td class="siteIdName">
+        <mat-label class="sortLbl">Sort By: </mat-label>
+      </td>
+      <td>
+        <mat-form-field class="sortOpt">
+          <mat-select [(ngModel)]="selectedValue">
+            <mat-option *ngFor="let sortValue of sortOption" [value]="sortValue">{{sortValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="sortOpt">
+          <mat-select [(ngModel)]="selectedSubOpt">
+            <mat-option *ngFor="let subValue of subOption" [value]="subValue">{{subValue}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <button mat-raised-button class="listBtn" (click)="loadSiteData()" color="primary" mat-button>List</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="tableData">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bbwDraggableTable>
+
+      <ng-container matColumnDef="siteType">
+        <th mat-header-cell class="th" *matHeaderCellDef> Type </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.siteTypest}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="siteId">
+        <th mat-header-cell class="th" *matHeaderCellDef> Site ID </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.siteId}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="siteName">
+        <th mat-header-cell class="th" *matHeaderCellDef> Site Name </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.siteName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Address">
+        <th mat-header-cell class="th" *matHeaderCellDef> Address </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="city">
+        <th mat-header-cell class="th" *matHeaderCellDef> City </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="state">
+        <th mat-header-cell class="th" *matHeaderCellDef>State </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.state}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell class="th statusTd" *matHeaderCellDef> Status </th>
+        <td mat-cell class="td statusTd" *matCellDef="let selectSite">
+          <span [hidden]="selectSite.status != '1'"> Active </span>
+          <span [hidden]="selectSite.status == '1'"> In-Active </span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="accountId">
+        <th mat-header-cell class="th" *matHeaderCellDef>Account ID </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.orgId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="accountName">
+        <th mat-header-cell class="th" *matHeaderCellDef> Account Name </th>
+        <td mat-cell class="td" *matCellDef="let selectSite"> {{selectSite.orgName}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns; let index = index" [ngClass]="{'highlight': selectedSitData == row}"
+        (click)="setClickedRow(row, index)"></tr>
+    </table>
+  </div>
+  <table class="btnGrp">
+    <tr>
+      <td class="itemTd">
+        <mat-form-field class="inptItem">
+          <input matInput disabled [value]="selectSite.length">
+        </mat-form-field>
+        <mat-label>Items</mat-label>
+      </td>
+      <td [hidden]="!useOrDoneButton">
+        <button mat-raised-button class="newBtn" (click)="useOrDone()" [disabled]="selectedSitData == null" color="primary" mat-button>Use/Done</button>
+      </td>
+      <td>
+        <button mat-raised-button class="newBtn" (click)="newAllSiteDetails()" color="primary" mat-button>New</button>
+      </td>
+      <td>
+        <button mat-raised-button class="openBtn" [disabled]="desibledButton" (click)="openAllSiteDetails()" color="primary"
+          mat-button>Open</button>
+      </td>
+      <td class="donTd">
+        <button mat-raised-button class="donBtn" color="primary" (click)="closeDialog()" mat-button>Done</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<mat-progress-spinner style="margin-top:-21%;left: 45%;z-index:125;" *ngIf="isLoading" color="success" mode="indeterminate"></mat-progress-spinner>

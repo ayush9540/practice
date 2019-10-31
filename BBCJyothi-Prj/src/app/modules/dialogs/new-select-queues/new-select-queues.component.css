@@ -1,0 +1,99 @@
+
+mat-card{
+    background: #3f51b5;
+    color: white;
+    width: 103.3%;
+    padding: 8px;
+    margin-left: -2.5%;
+    margin-top: -2.5%;
+}
+.input{
+    width: 90%;
+    margin-left: 2%;
+}
+table{
+    width: 100%;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+.txtarea{
+    width: 89%;
+    height: 195px;
+    /* margin-right: 1%; */
+    background: fixed no-repeat;
+}
+.object{
+    width: 12.5%;
+    height: 150px;;
+    /* border: 1px solid gray; */
+    display: inline-block;
+    margin-top: 1.5%;
+}
+.checkbox{
+    width: 85%;
+    height: 150px;;
+    /* border: 1px solid gray; */
+    float: right;
+    margin-top: 1.5%;
+}
+ .description{
+    width: 12.5%;
+    height: 155px;;
+    /* border: 1px solid white; */
+    display: inline-block;
+    margin-top: 1.5%;
+}
+.txtarea{
+    width: 84%;
+    height: 145px;
+    margin-right: 1%;
+    background: fixed no-repeat;
+    float: right;
+    margin-top: 1.5%;
+} 
+.titleTd{
+    width: 14.2%;
+}
+.btnTbl{
+    margin-top: 2%;
+    margin-left: 7%;
+    width: 95%;
+}
+.checkbox3{
+    margin-top: 3%;
+}
+.checkbox2{
+    margin-top: 3%;
+}
+.checkbox1{
+
+}
+.mat-form-field{
+    height: 45px;
+  }
+.caseTd{
+    width: 33%;
+}
+.radioBtn{
+
+}
+.radioBtn2{
+    margin-left: 20%;
+}
+
+
+* {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+

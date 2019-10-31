@@ -1,0 +1,552 @@
+<div>
+  <mat-card>Case {{caseId}} : Site {{name}} <p (click)="closeDialog()" class="close">&times;</p>
+  </mat-card>
+  <table class="siteTbl">
+    <tr>
+      <td class="custIdTd">
+        <mat-label>Customer ID/Name: </mat-label>
+      </td>
+      <td class="custNameTd">
+        <mat-form-field class="solInpt">
+
+          <input matInput type="text" [(ngModel)]="details.siteInfo.siteId" [disabled]="true">
+
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="solInpt">
+
+          <input matInput type="text"  [(ngModel)]="details.siteInfo.name" [disabled]="empRole.dslLimited">
+
+        </mat-form-field>
+      </td>
+      <td class="statusTd">
+        <mat-label>Status: </mat-label>
+      </td>
+      <td class="sortOptTd">
+        <mat-form-field class="sortOpt">
+          <mat-select [(ngModel)]="details.siteInfo.status">
+            <mat-option [value]="0">Active</mat-option>
+            <mat-option [value]="1">Inactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <!-- <td class="custTypeTd">
+        <mat-label>Customer Type: </mat-label>
+      </td>
+      <td class="sortOptTd">
+        <mat-form-field class="sortOpt">
+          <mat-select [(ngModel)]="details.siteInfo.xcustSubtype">
+            <mat-option *ngFor="let custOpt of customerOption" [value]="custOpt">{{custOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td> -->
+    </tr>
+  </table>
+  <table class="siteTbl2">
+    <tr>
+      <td class="custTypeTd">
+        <mat-label>Customer Type: </mat-label>
+      </td>
+      <td class="custDropTd">
+        <mat-form-field class="custDrop">
+          <mat-select [(ngModel)]="details.siteInfo.siteType" [disabled]="empRole.dslLimited">
+            <mat-option *ngFor="let custerOpt of custSubOption" [value]="custerOpt">{{custerOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td class="subTypeDrop">
+        <mat-form-field class="">
+          <mat-select [(ngModel)]="details.siteInfo.xcustSubtype">
+            <mat-option *ngFor="let custOpt of customerOption" [value]="custOpt">{{custOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <!-- <td>
+        <mat-label class="contactLbl">Contact List: </mat-label>
+      </td> -->
+      <!-- <td class="custTypeTd">
+        <mat-label>Status: </mat-label>
+      </td>
+      <td class="sortOptTd">
+        <mat-form-field class="sortOpt">
+          <mat-select [(ngModel)]="details.siteInfo.status">
+            <mat-option *ngFor="let stateOpt of statusOption" [value]="stateOpt">{{stateOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td> -->
+    </tr>
+  </table>
+  <table class="contactListTbl">
+    <tr>
+      <td>
+        <mat-label class="contactLbl">Contact List: </mat-label>
+      </td>
+    </tr>
+  </table>
+  <div class="tableData">
+
+    <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8" bbwDraggableTable>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell class="th" *matHeaderCellDef> First Name </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.firstName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell class="th" *matHeaderCellDef> Last Name </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.lastName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phoneExt">
+        <th mat-header-cell class="th" *matHeaderCellDef> Phone/Ext </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.phone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="contactRole">
+        <th mat-header-cell class="th" *matHeaderCellDef> Contact Role </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.roleName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hours">
+        <th mat-header-cell class="th" *matHeaderCellDef> Hours </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.hours}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="mailStop">
+        <th mat-header-cell class="th" *matHeaderCellDef> Mail Stop </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.mailStop}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailAddress">
+        <th mat-header-cell class="th" *matHeaderCellDef> Email Address </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.eMail}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="faxNumber">
+        <th mat-header-cell class="th" *matHeaderCellDef> Fax Number </th>
+        <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.faxNumber}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns1; sticky: true"></tr>
+      <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns1;"
+        [ngClass]="{'highlight': selectSiteContactList == row}" (click)="setClickedRow(row)"></tr>
+    </table>
+  </div>
+  <div class="btnGrop">
+    <!-- <button mat-raised-button color="primary" class="flashBtn" [disabled]="buttonDisabled"
+      mat-raised-button>Flashes</button>
+    <button mat-raised-button color="primary" class="siteBtn" [disabled]="buttonDisabled" mat-raised-button>Config
+      Mgr</button>
+    <button mat-raised-button color="primary" class="siteBtn" [disabled]="buttonDisabled" mat-raised-button>No
+      Attachments</button>
+    <button mat-raised-button color="primary" class="siteBtn" [disabled]="buttonDisabled" mat-raised-button>Service
+      Parts</button> -->
+    <button mat-raised-button color="primary" (click)="addSiteDetails()" class="addBtn" [disabled]="!isNew || empRole.dslLimited" mat-raised-button>Add</button>
+    <button mat-raised-button color="primary" class="siteBtn" [disabled]="isNew || empRole.dslLimited"
+      (click)="replaceSiteDetails()" mat-raised-button>Replace</button>
+    <button mat-raised-button color="primary" class="siteBtn" (click)="next()" 
+    [disabled]="isNew || disableNext" mat-raised-button>Next</button>
+    <button mat-raised-button color="primary" class="siteBtn" (click)="prev()"
+    [disabled]="isNew || disablePrev "  mat-raised-button>Previous</button>
+    <button mat-raised-button color="primary" (click)="closeDialog()" class="siteBtn" mat-raised-button>Done</button>
+  </div>
+  <div class="tableData2">
+    <mat-tab-group>
+      <mat-tab label="Address">
+        <table class="adrsTbl">
+          <tr>
+            <td class="adresTd">
+              <mat-label>Address</mat-label>
+            </td>
+            <td class="adrsInptTd">
+              <mat-form-field class="adrsInpt">
+
+                <input matInput [(ngModel)]="details.addressInfo.address" type="text"  [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+            <td>
+              <button mat-raised-button color="primary" class="selectBtn" (click)="openSelectAddress()">Select Address</button>
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl">
+          <tr>
+            <td class="adresTd">
+
+            </td>
+            <td class="adrsInptTd">
+              <mat-form-field class="adrsInpt">
+                <input matInput [(ngModel)]="details.addressInfo.address_2" type="text"  [disabled]="empRole.dslLimited">
+              </mat-form-field>
+            </td>
+            <td>
+              <button mat-raised-button color="primary" (click)="setNewPrimaryAddress()" class="selectBtn">New Address</button>
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl">
+          <tr>
+            <td class="adresTd">
+              <mat-label>city/State/Zip: </mat-label>
+            </td>
+            <td class="cityTd">
+              <mat-form-field class="cityInpt">
+
+                <input matInput type="text" [(ngModel)]="details.addressInfo.city" [disabled]="empRole.dslLimited">
+              </mat-form-field>
+
+              <mat-form-field class="stateInpt">
+                <input matInput type="text" [(ngModel)]="details.addressInfo.state" [disabled]="empRole.dslLimited">
+              </mat-form-field>
+
+              <mat-form-field class="zipInpt">
+                <input matInput type="text" [(ngModel)]="details.addressInfo.zipcode" [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl">
+          <tr>
+            <td class="adresTd">
+              <mat-label>County: </mat-label>
+            </td>
+            <td class="countryInptTd">
+              <mat-form-field class="">
+                <input matInput type="text"  [(ngModel)]="details.addressInfo.xcounty" [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+            <td class="timeZonTd">
+              <mat-label>Time Zone: </mat-label>
+            </td>
+            <td>
+              <mat-form-field class="">
+
+                <input matInput type="text" [(ngModel)]="details.timeZoneInfo.name" [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl">
+          <tr>
+            <td class="adresTd">
+              <mat-label>Country</mat-label>
+            </td>
+            <td class="countryInptTd">
+              <mat-form-field class="">
+
+                <input matInput type="text"  [(ngModel)]="details.countryInfo.name" [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+            <td class="timeZonTd">
+              <mat-label>GEO Code: </mat-label>
+            </td>
+            <td class="geoCodTd">
+              <mat-form-field class="">
+
+                <input matInput type="text" [(ngModel)]="details.siteInfo.geocode" [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-label>OCL: </mat-label>
+            </td>
+            <td>
+              <mat-checkbox></mat-checkbox>
+
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl">
+          <tr>
+            <td class="adresTd">
+                <mat-label class="accBtn">Account</mat-label>
+              <!-- <button mat-raised-button color="primary" class="accBtn" mat-raised-button>Account</button> -->
+            </td>
+            <td class="accountTd">
+              <mat-form-field class="accountInpt">
+
+                <input matInput type="text"  [(ngModel)]="accountId" [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="accountInpt2">
+
+
+                <input matInput type="text" [(ngModel)]="accountName"  [disabled]="empRole.dslLimited">
+
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl1">
+          <tr>
+            <td>
+              <mat-label class="ccLbl">CC: </mat-label>
+              <mat-label class="areaCodLbl">Area Code-No/Ext: </mat-label>
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl">
+          <tr>
+            <td class="adresTd">
+              <mat-label>Phone: </mat-label>
+            </td>
+            <td class="phoneTd">
+              <mat-form-field class="phoneInpt">
+                <input matInput type="text" [(ngModel)]="details.countryInfo.code" [disabled]="empRole.dslLimited">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="phoneInpt2">
+                <input matInput [(ngModel)]="details.siteInfo.phone" pattern="^\d{10}$" type="text"  [disabled]="empRole.dslLimited">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <table class="alignTbl">
+          <tr>
+            <td class="adresTd">
+              <mat-label>Fax: </mat-label>
+            </td>
+            <td class="phoneTd">
+              <mat-form-field class="phoneInpt">
+                <input matInput type="text"  [(ngModel)]="details.countryInfo.code" [disabled]="empRole.dslLimited">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="phoneInpt2">
+                <input matInput type="text"  [(ngModel)]="details.siteInfo.fax" [disabled]="empRole.dslLimited">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </mat-tab>
+
+      <!-- <mat-tab label="Notes">
+
+        <table>
+          <tr>
+            <td class="notesTd">
+              <mat-label class="noteLbl">Special Consideration: </mat-label>
+            </td>
+            <td>
+              <mat-form-field class="specialOpt">
+                <mat-select [(ngModel)]="selectedSpecialOpt">
+                  <mat-option *ngFor="let specialOpt of specialOption" [value]="specialOpt">{{specialOpt}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <textarea class="noteSelect">
+
+        </textarea>
+      </mat-tab> -->
+      <!-- <mat-tab label="Hierarchy">
+        <div>
+          <table class="parentLbl">
+            <tr>
+              <td>
+                <mat-label class="parent">Parent Site: </mat-label>
+              </td>
+            </tr>
+          </table>
+          <div class="parentDiv">
+            <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+              <ng-container matColumnDef="siteId">
+                <th mat-header-cell class="th" *matHeaderCellDef> Site ID </th>
+                <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.parentSiteId}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="siteName">
+                <th mat-header-cell class="th" *matHeaderCellDef> Site Name </th>
+                <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.parentSiteName}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="siteAddress">
+                <th mat-header-cell class="th" *matHeaderCellDef> Address </th>
+                <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.parentSiteAddress}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns2; sticky: true"></tr>
+              <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns2;"
+                [ngClass]="{'highlight': selectParentData == row}" (click)="highlight(row)" (click)="setParentClickRow(row)">
+              </tr>
+            </table>
+          </div>
+          <div class="btnDiv">
+            <button mat-raised-button color="primary" class="rightBtn" mat-raised-button>...</button>
+            <button mat-raised-button color="primary" class="dotBtn" mat-raised-button>...</button>
+            <button mat-raised-button color="primary" class="removBtn" mat-raised-button>Remove</button>
+          </div>
+          <table class="parentLbl">
+            <tr>
+              <td>
+                <mat-label class="parent">Child Site: </mat-label>
+              </td>
+            </tr>
+          </table>
+
+          <div class="childDiv">
+            <table mat-table [dataSource]="dataSource3" class="mat-elevation-z8">
+
+              <ng-container matColumnDef="childSiteId">
+                <th mat-header-cell class="th" *matHeaderCellDef> Site ID </th>
+                <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.childSiteId}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="childSiteName">
+                <th mat-header-cell class="th" *matHeaderCellDef> Site Name </th>
+                <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.childSiteName}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="childSiteAddress">
+                <th mat-header-cell class="th" *matHeaderCellDef> Address </th>
+                <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.childSiteAddress}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns3; sticky: true"></tr>
+              <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns3;"
+                [ngClass]="{'highlight': selectChildData == row}" (click)="highlight(row)" (click)="setSelectChildRow(row)">
+              </tr>
+            </table> 
+          </div>
+          <div class="btnDiv">
+            <button mat-raised-button color="primary" class="rightBtn" mat-raised-button>...</button>
+            <button mat-raised-button color="primary" class="dotBtn" mat-raised-button>...</button>
+            <button mat-raised-button color="primary" class="removBtn" mat-raised-button>Remove</button>
+          </div>
+        </div>
+      </mat-tab> -->
+      <!-- <mat-tab label="Contracts">
+        <div class="contact">
+          <table mat-table [dataSource]="dataSource4" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="contractId">
+              <th mat-header-cell class="th contractIdTd" *matHeaderCellDef> Contract ID </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.firstName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+              <th mat-header-cell class="th" *matHeaderCellDef> Type </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.lastName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell class="th" *matHeaderCellDef> Status </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.phone}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="startDate">
+              <th mat-header-cell class="th" *matHeaderCellDef> Start Date </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.contactRole}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="endDate">
+              <th mat-header-cell class="th" *matHeaderCellDef> Hours </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.hours}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="uniteType">
+              <th mat-header-cell class="th endDate" *matHeaderCellDef> End Date </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.mailStop}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="emailAddress">
+              <th mat-header-cell class="th" *matHeaderCellDef> Unite Type </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.eMail}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="unitePurch">
+              <th mat-header-cell class="th unitPurch" *matHeaderCellDef> Unite Purch </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.faxNumber}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="uniteAvail">
+              <th mat-header-cell class="th" *matHeaderCellDef> Unite Avail </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.emailAddress}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="unitsUsed">
+              <th mat-header-cell class="th unitUsed" *matHeaderCellDef> Unite Used </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.faxNumber}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="phoneResp">
+              <th mat-header-cell class="th phoneResp" *matHeaderCellDef> Phone Response </th>
+              <td mat-cell class="td" *matCellDef="let caseContact"> {{caseContact.faxNumber}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns4; sticky: true"></tr>
+            <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns4;"
+              [ngClass]="{'highlight': selectContactData == row}" (click)="highlight(row)" (click)="setClickedContactRow(row)"></tr>
+          </table>
+        </div>
+      </mat-tab> -->
+      <!-- <mat-tab label="Support Info"> Content 2 </mat-tab> -->
+      <mat-tab label="Bill/Ship To">
+        <table>
+          <tr>
+            <td class="billAdrsTd">
+              <mat-label>Bill To Address: </mat-label>
+            </td>
+            <td>
+              <mat-form-field class="billToInpt">
+                <input matInput type="text"  [(ngModel)]="details.addressInfo.billToAddress" [disabled]="true">
+              </mat-form-field>
+            </td>
+            <td class="selectAdrsTd">
+              <button mat-raised-button (click)="selectBillAddress()" color="primary" class="removBtn">Select Address</button>
+            </td>
+          </tr>
+        </table>
+        <button mat-raised-button (click)="setNewBillAddress()" color="primary" class="newAdrsBtn">New Address</button>
+        <table class="shipTbl">
+          <tr>
+            <td class="billAdrsTd">
+              <mat-label>Ship To Address: </mat-label>
+            </td>
+            <td>
+              <mat-form-field class="billToInpt">
+                <input matInput type="text"  [(ngModel)]='details.addressInfo.shipToAddress' [disabled]="true">
+              </mat-form-field>
+            </td>
+            <td class="selectAdrsTd">
+              <button mat-raised-button (click)="selectShipAddress()" color="primary" class="removBtn">Select Address</button>
+            </td>
+          </tr>
+        </table>
+        <button mat-raised-button (click)="setNewShipAddress()" color="primary" class="newAdrsBtn">New Address</button>
+        <table>
+          <tr>
+            <td class="billAdrsTd">
+              <mat-label>Preferred Shipping Method: </mat-label>
+            </td>
+            <td>
+              <mat-form-field class="billSort">
+                <mat-select [(ngModel)]="details.siteInfo.shipVia">
+                  <mat-option *ngFor="let billShipOpt of billShipOption" [value]="billShipOpt">{{billShipOpt}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+
+
+
+</div>
+<mat-progress-spinner style="margin-top:-40%;left: 45%;z-index:125;" *ngIf="isLoading" color="success" mode="indeterminate"></mat-progress-spinner>

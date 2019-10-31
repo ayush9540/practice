@@ -1,0 +1,160 @@
+<div>
+  <mat-card>{{headerInfo.node}} {{headerInfo.title}}</mat-card>
+</div>
+<div class="">
+<!-- <table class="listDrop2">
+ <tr>
+   <td>
+   <mat-form-field class="dslSirDrp">
+     <mat-select [(ngModel)]="firstList">
+       <mat-option *ngFor="let drop of selectDrop" [value]="drop">{{drop}}</mat-option> 
+     </mat-select>
+   </mat-form-field>
+   </td>
+ </tr>
+</table> -->
+<table class="plnrTbl">
+ <tr>
+   <td>
+     <mat-form-field class="dslSirDrp1 dropLeft1">
+       <mat-select [(ngModel)]="firstDrop" (ngModelChange)=setDefault($event)>
+         <mat-option *ngFor="let drop2 of selectDrop2" [value]="drop2">{{drop2}}</mat-option>
+       </mat-select>
+     </mat-form-field>
+  
+     <mat-form-field class="dslSirDrp1 dropLeft">
+       <mat-select  [(ngModel)]="secondDrop">
+           <mat-option *ngFor="let drop3 of selectedDrop3" [value]="drop3">{{drop3}}</mat-option>
+       </mat-select>
+     </mat-form-field>
+
+     <span>
+      <mat-form-field *ngIf="firstDrop != 'Age'" class="queuesInpt">
+          <input matInput [(ngModel)]="userTextInput">
+        <!-- <input matInput type="text" [value]="enteredText" [(ngModel)]="selectedOptions"> -->
+      </mat-form-field>
+      <mat-form-field *ngIf="firstDrop == 'Age';" class="datePicker">
+       <input matInput [matDatepicker]="picker" [(ngModel)]="userInput">
+       <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="firstDrop != 'Age'"></mat-datepicker-toggle>
+       <mat-datepicker #picker></mat-datepicker>
+   </mat-form-field>  
+      </span>
+ 
+     <mat-form-field class="sortDropdown">
+       <mat-select [(ngModel)]="fourthList">
+           <mat-option *ngFor="let drop4 of selectedDrop4" [value]="drop4" >{{drop4}}</mat-option>
+       </mat-select>
+     </mat-form-field>
+ <button class="dslSirDrp1 dropRight" color="primary" mat-raised-button (click)="listClick()" >List</button>
+</td>
+ </tr>
+</table>
+
+<!-- <table class="listTbl">
+ <td> <button class="servBtn" mat-raised-button (click)="listButton()">List</button> </td>
+</table> -->
+</div>
+<div class="plnrBrdr">
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bbwDraggableTable>
+   
+     <!-- Position Column -->
+     <!-- <ng-container matColumnDef="type1">
+       <th mat-header-cell *matHeaderCellDef class="oneTh th"> Type </th>
+       <td mat-cell *matCellDef="let queuesCase" class="oneTd td"> {{queuesCase.oType}} </td>
+     </ng-container> -->
+   
+     <!-- Name Column -->
+     <ng-container matColumnDef="idNumber">
+       <th mat-header-cell *matHeaderCellDef class="twoTh th"> ID </th>
+       <td mat-cell *matCellDef="let queuesCase" class="twoTd td"> {{queuesCase.idNumber}} </td>
+     </ng-container>
+   
+     <!-- Weight Column -->
+     <ng-container matColumnDef="special">
+       <th mat-header-cell *matHeaderCellDef class="threeTh th"> Special Order</th>
+       <td mat-cell *matCellDef="let queuesCase" class="threeTd td"> {{queuesCase.xSpecialOrder}} </td>
+     </ng-container>
+   
+     <!-- Symbol Column -->
+     <ng-container matColumnDef="name">
+       <th mat-header-cell *matHeaderCellDef class="fourTh th"> Site </th>
+       <td mat-cell *matCellDef="let queuesCase" class="fourTd td"> {{queuesCase.name}} </td>
+     </ng-container>
+     <!--Age-->
+     <ng-container matColumnDef="age">
+       <th mat-header-cell *matHeaderCellDef class="fiveTh th"> Age(d h:m) </th>
+       <td mat-cell *matCellDef="let queuesCase" class="fiveTd td"> {{queuesCase.age}} </td>
+     </ng-container>
+     <!--Condition-->
+     <ng-container matColumnDef="Condition">
+       <th mat-header-cell *matHeaderCellDef class="sixTh th">Condition </th>
+       <td mat-cell *matCellDef="let queuesCase" class="sixTd td"> {{queuesCase.condition}} </td>
+     </ng-container>
+     <!--Status-->
+     <ng-container matColumnDef="status">
+       <th mat-header-cell *matHeaderCellDef class="sevenTh th"> Status </th>
+       <td mat-cell *matCellDef="let queuesCase" class="sevenTd td"> {{queuesCase.status}} </td>
+     </ng-container>
+     <!--Type-->
+     <ng-container matColumnDef="type">
+       <th mat-header-cell *matHeaderCellDef class="eightTh th">Type </th>
+       <td mat-cell *matCellDef="let queuesCase" class="eightTd td"> {{queuesCase.type}} </td>
+     </ng-container>
+     <!--Priority-->
+     <ng-container matColumnDef="priority">
+       <th mat-header-cell *matHeaderCellDef class="nineTh th"> Priority </th>
+       <td mat-cell *matCellDef="let queuesCase" class="nineTd td"> {{queuesCase.priority}} </td>
+     </ng-container>
+     <!--Serveri-->
+     <ng-container matColumnDef="severity">
+       <th mat-header-cell *matHeaderCellDef class="th"> Severity </th>
+       <td mat-cell *matCellDef="let queuesCase" class="td"> {{queuesCase.severity}} </td>
+     </ng-container>
+     <!--Title-->
+     <ng-container matColumnDef="title">
+       <th mat-header-cell *matHeaderCellDef class="elevenTh th"> Title </th>
+       <td mat-cell *matCellDef="let queuesCase" class="elevenTd td"> {{queuesCase.title}} </td>
+     </ng-container>
+   
+     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+     <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns;" (dblclick)="openCase();closeSideNav();"
+                                   [ngClass]="{'highlight': selectedRow == row}"
+                                                       (click)="setClickedRow(row)"></tr>
+   </table>
+
+</div>
+<mat-paginator class="pagination-row" [pageSizeOptions]="[50, 100, 200]" showFirstLastButtons></mat-paginator>
+<table class="myTitle">
+ <tr>
+   <td class="titleTd"><label>Title</label></td>
+   <td class="dlsInptTitl">
+     <mat-form-field class="dslSriTitlInpt">
+       <input [disabled]="true" [(ngModel)]="title" matInput type="text">
+     </mat-form-field>
+   </td>
+ </tr>
+</table>
+
+
+<div>
+<table class="button-row">
+ <tr>
+   <td class="dslItem">
+     <mat-form-field class="items">
+       <input matInput [value]="queuesCase.length"> 
+     </mat-form-field>
+   </td>
+   <td><mat-label>Items</mat-label></td>
+   <td><button class="dslBtnGrp1" color="primary" mat-raised-button (click)="openCase();closeSideNav();" [disabled]="disabledButton">View</button></td>
+   <td><button class="dslBtnGrp2" color="primary" mat-raised-button (click)="rejectCase()" [disabled]="disabledButton || empRole.dslLimited">Reject</button></td>
+   <td><button class="dslBtnGrp2" color="primary" mat-raised-button (click)="acceptCase()" [disabled]="disabledButton || empRole.dslLimited">Accept</button></td>
+   <td class="dslDon"><button color="primary" class="dslBtnGrp3" (click)="closeSideNav();" mat-raised-button>Done</button></td>
+ </tr>
+</table>
+</div>
+<!-- <div class="button-row">
+<button class="dslBtnGrp1" mat-raised-button (click)="openButton()" [disabled]="disabledButton">View</button>
+<button class="dslBtnGrp2" mat-raised-button (click)="openButton1()" [disabled]="disabledButton">Reject</button>
+<button class="dslBtnGrp2" mat-raised-button (click)="openButton2()" [disabled]="disabledButton">Accept</button>
+<button class="dslBtnGrp3" mat-raised-button>Done</button>
+</div> -->

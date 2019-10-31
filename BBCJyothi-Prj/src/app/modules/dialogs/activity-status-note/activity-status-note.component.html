@@ -1,0 +1,188 @@
+<mat-card>Activity Status Note <span class="close" (click)="cancelDialog()">&times;</span></mat-card>
+<div>
+    <table>
+        <tr>
+            <td>
+                <mat-label>Case ID: </mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.caseId" disabled>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-label>Change Date:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [value]="statusChange.createDate | toLocalTime" disabled>
+                </mat-form-field>
+            </td>
+            <!-- <td>
+                <mat-label>Changed By:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.loginName" disabled>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-label>Condition:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.condition" disabled>
+                </mat-form-field>
+            </td> -->
+        </tr>
+        <tr>
+            <td>
+                <mat-label>Current Status Code:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.oldCaseStatus" disabled>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-label>New Status Code:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-select [(ngModel)]="statusChange.newCaseStatus" (ngModelChange)=changedNewStatusCode($event)>
+                        <mat-form-field class="arraySearchFilter">
+                            <input #searchText2 matInput placeholder="Search">
+                        </mat-form-field>
+                        <mat-option *ngFor="let caseStatus of caseStatusTypes | arraySearchFilter : searchText2.value"
+                            [value]="caseStatus">{{caseStatus}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+            <!-- <td>
+                <mat-label>Dest. Queue:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.destQueue">
+                </mat-form-field>
+            </td> -->
+        </tr>
+        <!-- <tr>
+
+            <td>
+                <mat-label>KIR:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.kir">
+                </mat-form-field>
+            </td>
+            <td></td>
+            <td>
+            <mat-form-field class="titleDrop">
+                <mat-select [(ngModel)]="statusChange.kirdropval">
+                    <mat-option *ngFor="let title of titles" [value]="title">{{title}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            </td>
+        </tr> -->
+        <tr>
+            <!-- <td>
+                <mat-label>Release Date/Time:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.releaseDate">
+                </mat-form-field>
+            </td> -->
+            <td>
+                <mat-label>Cancel Reason:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-select [(ngModel)]="statusChange.cancelReason" [disabled]="disableCancelReason">
+                        <mat-form-field class="arraySearchFilter">
+                            <input #searchText1 matInput placeholder="Search">
+                        </mat-form-field>
+                        <mat-option *ngFor="let cancelReason of cancelReasons | arraySearchFilter : searchText1.value" [value]="cancelReason">{{cancelReason}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-label>Effective Date:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [value]="statusChange.effectiveDate | toLocalTime">
+                </mat-form-field>&nbsp;
+                <button mat-raised-button color="primary" (click)="dateTimeChange()">D/T</button>
+            </td>
+            <!-- <td>
+                <mat-label>Hold Reason:</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-select [(ngModel)]="statusChange.holdReason">
+                        <mat-option *ngFor="let holdReason of holdReasons" [value]="holdReason">{{holdReason}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td> -->
+
+        </tr>
+        <!-- <tr>
+            
+            <td>
+                <mat-label>Contact(s):</mat-label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="statusChange.contacts">
+                </mat-form-field>
+            </td>
+        </tr> -->
+    </table>
+</div>
+<!-- <div class="grid-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="Effective Date">
+            <th mat-header-cell *matHeaderCellDef class="stripe"> Effective Date </th>
+            <td mat-cell *matCellDef="let selectCommit" class="stripe"> {{selectCommit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Hold Reason">
+            <th mat-header-cell *matHeaderCellDef class="stripe">Hold Reason </th>
+            <td class="table-date" mat-cell *matCellDef="let selectCommit" class="stripe"> {{selectCommit}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Contact(s)">
+            <th mat-header-cell *matHeaderCellDef class="stripe"> Contact(s)</th>
+            <td class="table-date" mat-cell *matCellDef="let selectCommit" class="stripe">
+                {{selectCommit}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="Cancel Reason">
+            <th mat-header-cell *matHeaderCellDef class="stripe"> Cancel Reason </th>
+            <td class="table-date" mat-cell *matCellDef="let selectCommit" class="stripe">
+                {{selectCommit}}
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; let index = index" (dblclick)="openCommitment();"
+            [ngClass]="{'highlight': selectedAct == row}" (click)="setClickedRow(row,index)">
+        </tr>
+    </table>
+</div> -->
+    <mat-label>Notes:</mat-label><div>
+    <textarea [(ngModel)]="statusChange.notes"></textarea></div>
+<div>
+    <table>
+        <tr>
+            <!-- <td><button mat-raised-button color="primary">Add</button></td>
+            <td><button mat-raised-button color="primary">Clear</button></td> -->
+            <td class="center-td"><button mat-raised-button color="primary" (click)="changeStatus()">Change</button></td>
+            <td class="center-td"><button mat-raised-button color="primary" (click)="cancelDialog()">Cancel</button></td>
+        </tr>
+    </table>
+</div>

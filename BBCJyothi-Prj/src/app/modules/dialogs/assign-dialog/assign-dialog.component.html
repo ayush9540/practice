@@ -1,0 +1,49 @@
+<mat-card>Assign Case<span class="close" (click)="cancelDialog()">&times;</span></mat-card><br>
+<div>
+  <mat-label>Show employees whose </mat-label>
+  <mat-form-field>
+    <mat-select [(ngModel)]="firstOrderSelected">
+      <mat-option value="First Name">First Name</mat-option>
+      <mat-option value="Last Name">Last Name</mat-option>
+      <mat-option value="Attuid">ATTUID</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field class="secDrop">
+    <mat-select [(ngModel)]="secondOrderSelected">
+      <mat-option value="starts with">starts with</mat-option>
+      <mat-option value="ends with">ends with</mat-option>
+      <mat-option value="contains">contains</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <button (click)="listClick()" mat-raised-button color="primary" class="listBtn">List</button>
+  <mat-form-field class="userInput">
+    <input matInput [(ngModel)]="userInput">
+  </mat-form-field>
+</div><br>
+<div class="queueTable">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" bbwDraggableTable>
+    <ng-container matColumnDef="Last Name">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let employee"> {{employee.lastName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="First Name">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let employee"> {{employee.firstName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Attuid">
+      <th mat-header-cell *matHeaderCellDef>ATTUID </th>
+      <td mat-cell *matCellDef="let employee"> {{employee.userAttuid}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'highlight': selectedAct == row}" (click)="setClickedRow(row)">
+    </tr>
+  </table>
+</div><br>
+<div>
+  <button mat-raised-button color="primary" (click)="cancelDialog()">Cancel</button>
+  <button class="assignBtn" [disabled]="isAssignButtonDisabled" mat-raised-button color="primary" (click)="assignClick()">Assign</button>
+</div>

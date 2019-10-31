@@ -1,0 +1,126 @@
+<mat-card>Commitment Log<span class="close" (click)="cancelDialog()">&times;</span></mat-card>
+<div>
+  <table>
+    <tr>
+      <td>
+        <mat-label>Commit D/T:</mat-label>
+        <mat-form-field class="commitDt">
+          <input matInput [value]="selectedAct.schedCmpltime | toLocalTime" disabled>
+        </mat-form-field>
+      </td>
+      <td>
+        <button mat-raised-button color="primary" (click)="dateTimeChange()">D/T</button>
+      </td>
+      <td>
+        <mat-label>Original Commitment Date:</mat-label>
+        <mat-form-field class="originalCommitDate">
+          <input matInput [value]="selectedAct.xOrigTime | toLocalTime" disabled>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="warningText">
+  <table>
+    <tr>
+      <td>
+          <mat-label>Title:</mat-label>
+          <mat-form-field class="titleDrop">
+            <mat-select [(ngModel)]="selectedAct.title" [disabled]="!isNew">
+              <mat-option *ngFor="let title of titles" [value]="title">{{title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="titleInp">
+          <input matInput disabled>{{selectedAct.title}}
+        </mat-form-field>
+        </td>
+    </tr>
+      
+  </table>
+  
+</div>
+<div class="tableFieldset">
+  <fieldset>
+    <legend>On Hold Reasons</legend>
+    <div>
+      <table>
+        <tr>
+          <td>
+            <mat-label>Organization/Function:</mat-label>
+            <mat-form-field class="organization">
+              <mat-select [(ngModel)]="selectedAct.xJeopardy" (ngModelChange)=changeValue($event)>
+                <mat-option *ngFor="let organization of organizations" [value]="organization">{{organization}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-label class="prlotaje">Problem Description:</mat-label>
+            <mat-form-field class="problemDes">
+              <mat-select [(ngModel)]="selectedAct.xJeopardy2" (ngModelChange)=changeValue($event)>
+                <mat-option *ngFor="let problem of problemDescriptions" [value]="problem">{{problem}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-label class="prlotaje">Location Information:</mat-label>
+            <mat-form-field class="locationInfo">
+              <mat-select [(ngModel)]="selectedAct.xJeopardy3" (ngModelChange)=changeValue($event)>
+                <mat-option *ngFor="let location of locationInformations" [value]="location">{{location}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-label>Information Status:</mat-label>
+            <mat-form-field class="infoSts">
+              <mat-select [(ngModel)]="selectedAct.xJeopardy4" (ngModelChange)=changeValue($event)>
+                <mat-option *ngFor="let status of informationStatus" [value]="status">{{status}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-label class="prlotaje">Task Workable:</mat-label>
+            <mat-form-field class="taskWork">
+              <mat-select [(ngModel)]="selectedAct.xJeopardy1_5" (ngModelChange)=changeValue($event)>
+                <mat-option *ngFor="let task of taskWorkable" [value]="task">{{task}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-label class="prlotaje">Jeopardy Code:</mat-label>
+            <mat-form-field class="jepCode">
+              <input matInput [(ngModel)]="jepCode" disabled>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </fieldset>
+</div><br>
+<div>
+  <mat-label>Commitment:</mat-label><br>
+  <textarea [(ngModel)]="enterCommitment"></textarea>
+</div>
+<br>
+<div>
+  <mat-label>Commitment History: </mat-label><br>
+  <textarea disabled [(ngModel)]="selectedAct.cmitHistory"></textarea>
+</div>
+<div>
+  <table>
+    <tr>
+      <td><button class="btn" mat-raised-button color="primary" (click)="prev()"
+          [disabled]="disablePrev || isNew">Previous</button></td>
+      <td><button class="btn" mat-raised-button color="primary" (click)="next()"
+          [disabled]="disableNext || isNew">Next</button></td>
+      <td><button [disabled]="selectedAct.condition == 4" class="btn" mat-raised-button color="primary" (click)="make()">Make</button></td>
+      <td><button class="btn" mat-raised-button color="primary" (click)="fullFillBtn()"
+          [disabled]="isNew || selectedAct.condition == 4">Fulfill</button></td>
+      <td><button class="btn" mat-raised-button color="primary" (click)="cancelDialog()">Done</button></td>
+    </tr>
+  </table>
+</div>

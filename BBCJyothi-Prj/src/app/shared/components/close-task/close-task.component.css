@@ -1,0 +1,59 @@
+
+mat-card{
+    background: #3f51b5;
+    color: white;
+    width: 103.7%;
+    padding: 8px;
+    margin-left: -2.8%;
+    margin-top: -2.8%;
+}
+
+table{
+    width: 100%;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+
+.statusTd{
+    width: 17%;
+}
+.labelTd{
+    width: 15%;
+}
+.statusLbl{
+    width: 32%;
+}
+textarea{
+    width: 100%;
+    margin-top: 0.5%;
+    height: 100px;
+}
+.resolTbl{
+    margin-top: -2%;
+}
+.savBtn{
+    float: right;
+}
+
+.closedBy{
+    width: 38%;
+}
+.btnsave{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

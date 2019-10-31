@@ -1,0 +1,49 @@
+<!--Mat Table-->
+<div class="grid-container">
+  <div class="datatable"><br>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Title Column -->
+    <ng-container matColumnDef="Title">
+        <th class="th" mat-header-cell *matHeaderCellDef> Title </th>
+        <td class="td" mat-cell *matCellDef="let commHistory"> {{commHistory.title}} </td>
+    </ng-container>
+  
+    <!-- Scheduled Column -->
+    <ng-container matColumnDef="Scheduled Date">
+        <th class="th" mat-header-cell *matHeaderCellDef> Scheduled Date </th>
+        <td class="td" mat-cell *matCellDef="let commHistory"> {{commHistory.schedCmpltime | toLocalTime}} </td>
+    </ng-container>
+  
+    <!-- Original Date Column -->
+    <ng-container matColumnDef="Original Date">
+      <th class="th" mat-header-cell *matHeaderCellDef> Original Date </th>
+      <td class="td" mat-cell *matCellDef="let commHistory"> {{commHistory.xOrigTime | toLocalTime}} </td>
+    </ng-container>
+  
+    <!-- Complete Date Column -->
+    <ng-container matColumnDef="Complete Date">
+      <th class="th" mat-header-cell *matHeaderCellDef> Complete Date </th>
+      <td class="td" mat-cell *matCellDef="let commHistory"> {{commHistory.actCmpltime | toLocalTime}} </td> 
+    </ng-container>
+
+    <!-- Hold Reason Column -->
+    <ng-container matColumnDef="Hold Reason">
+      <th class="th" mat-header-cell *matHeaderCellDef> Hold Reason </th>
+      <td class="td" mat-cell *matCellDef="let commHistory"> {{commHistory.xJepSum1}} </td>
+    </ng-container>
+
+   <!-- Offs Column -->
+    <ng-container matColumnDef="Offs">
+      <th class="th" mat-header-cell *matHeaderCellDef> Offset </th>
+      <td class="td" mat-cell *matCellDef="let commHistory">&nbsp;&nbsp; {{commHistory.xOffsetLoi}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns;" 
+                                    [ngClass]="{'highlight': selectedAct == row}"
+                                    (click)="setClickedRow(row)"></tr>
+    </table>      
+  </div>
+  <mat-progress-spinner style="margin-top:8%;left: 45%;z-index:125;" *ngIf="isLoading" color="success" mode="indeterminate"></mat-progress-spinner>
+  </div>

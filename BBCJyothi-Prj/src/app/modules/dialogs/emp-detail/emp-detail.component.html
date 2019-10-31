@@ -1,0 +1,208 @@
+<mat-progress-spinner style="left: 44%;z-index:125;position: fixed;margin-top: 10%;" *ngIf="isLoading" color="success"
+  mode="indeterminate"></mat-progress-spinner>
+<div>
+  <mat-card>Employee <p (click)="closeDialog()" class="close">&times;</p>
+  </mat-card>
+  <table class="row">
+    <tr>
+      <td class="firstNmTd">
+        <mat-label>First Name: </mat-label>
+      </td>
+      <td class="inptTd">
+        <mat-form-field class="inpt">
+          <input matInput [(ngModel)]="details.employeeInfo.firstName" type="text">
+        </mat-form-field>
+      </td>
+      <td class="lastNmTd">
+        <mat-label>Last Name: </mat-label>
+      </td>
+      <td>
+        <mat-form-field class="inpt2">
+          <input matInput [(ngModel)]="details.employeeInfo.lastName" type="text">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="row-One">
+    <tr>
+      <td class="lastNmTd">
+        <mat-label>ATTUID: </mat-label>
+      </td>
+      <td class="inptTd">
+        <mat-form-field class="inpt">
+          <input matInput [(ngModel)]="details.employeeInfo.userAttuid" type="text">
+        </mat-form-field>
+      </td>
+      <td class="firstNmTd">
+        <mat-label>Login Name: </mat-label>
+      </td>
+      <td class="inptTd">
+        <mat-form-field class="inpt2">
+          <input matInput [(ngModel)]="details.employeeInfo.loginName" type="text">
+        </mat-form-field>
+      </td>
+      <!-- <td class="lastNmTd">
+        <mat-label>Password: </mat-label>
+      </td>
+      <td>
+        <mat-form-field class="inpt2">
+          <input matInput [(ngModel)]="details.employeeInfo.password" type="password">
+        </mat-form-field>
+      </td> -->
+    </tr>
+  </table>
+  <table class="row-One">
+    <tr>
+      <td class="firstNmTd">
+        <mat-label>Email Address: </mat-label>
+      </td>
+      <td class="inptTd">
+        <mat-form-field class="inpt">
+          <input matInput [(ngModel)]="details.employeeInfo.email" type="email">
+        </mat-form-field>
+      </td>
+      <td class="firstNmTd">
+        <mat-label>Prime. Phone No: </mat-label>
+      </td>
+      <td class="">
+        <mat-form-field class="inpt2">
+          <input matInput maxlength="10" [(ngModel)]="details.employeeInfo.primPhoneNo" type="text">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="row-One">
+    <tr>
+      <td class="firstNmTd">
+        <mat-label>Site Name: </mat-label>
+      </td>
+      <td class="siteNmInpt">
+        <mat-form-field class="inpt">
+          <input matInput [(ngModel)]="details.employeeInfo.siteName" type="text">
+        </mat-form-field>
+      </td>
+      <td class="btnTd1">
+        <button mat-raised-button (click)="selectSiteInfo();" color="primary" class="siteBtn">...</button>
+      </td>
+      <td class="onlinePtivTd">
+        <mat-label>Online Priv: </mat-label>
+      </td>
+      <td>
+        <mat-form-field class="onlineDrp">
+          <mat-select [(ngModel)]="details.employeeInfo.onlinePriv">
+            <mat-form-field class="arraySearchFilter">
+              <input #searchText1 matInput placeholder="Search">
+            </mat-form-field>
+            <mat-option *ngFor="let sortOpt of onlineDropdown | arraySearchFilter : searchText1.value"
+              [value]="sortOpt">
+              {{sortOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="">
+    <tr>
+      <!-- <td class="lastNmTd">
+        <mat-label>Resource Configuration: </mat-label>
+      </td>
+      <td class="inptTd">
+        <mat-form-field class="sortOption">
+          <mat-select [(ngModel)]="details.employeeInfo.resourceConfiguration">
+            <mat-form-field class="arraySearchFilter">
+              <input #searchText matInput placeholder="Search">
+            </mat-form-field>
+            <mat-option *ngFor="let sortOpt of resourceDrpdwn | arraySearchFilter : searchText.value" [value]="sortOpt">
+              {{sortOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td> -->
+      <td class="firstNmTd">
+        <mat-checkbox [checked]="details.employeeInfo.active=='1'" (change)="(details.employeeInfo.active!='1') ? details.employeeInfo.active='1': details.employeeInfo.active='0'">Active </mat-checkbox>
+      </td>
+      <td class="allowTd">
+        <mat-checkbox [checked]="details.employeeInfo.allowProxy=='1'" (change)="(details.allowProxy!='1') ? details.employeeInfo.allowProxy='1': details.employeeInfo.allowProxy='0'">Allow Proxy </mat-checkbox>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+  <!-- <table class="row-One">
+    <tr>
+      <td class="firstNmTd">
+        <mat-label>ID: </mat-label>
+      </td>
+      <td class="inptTd">
+        <mat-form-field class="inpt">
+          <input matInput [(ngModel)]="details.employeeInfo.id" type="text">
+        </mat-form-field>
+      </td>
+      <td class="lastNmTd">
+        <mat-label>Online Priv: </mat-label>
+      </td>
+      <td>
+        <mat-form-field class="onlineDrp">
+          <mat-select [(ngModel)]="details.employeeInfo.onlinePriv">
+            <mat-form-field class="arraySearchFilter">
+              <input #searchText1 matInput placeholder="Search">
+            </mat-form-field>
+            <mat-option *ngFor="let sortOpt of onlineDropdown | arraySearchFilter : searchText1.value"
+              [value]="sortOpt">
+              {{sortOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table> -->
+  <!-- <table class="row-One">
+    <tr>
+      <td class="firstNmTd">
+        <mat-checkbox>Active </mat-checkbox>
+      </td>
+      <td class="allowTd">
+        <mat-checkbox>Allow Proxy </mat-checkbox>
+      </td>
+       <td class="restTd">
+        <mat-checkbox>Restrict </mat-checkbox>
+      </td> 
+      <td class="lastNmTd">
+        <mat-label>Resource Configuration: </mat-label>
+      </td>
+      <td>
+        <mat-form-field class="sortOption">
+          <mat-select [(ngModel)]="details.employeeInfo.resourceConfiguration">
+            <mat-form-field class="arraySearchFilter">
+              <input #searchText matInput placeholder="Search">
+            </mat-form-field>
+            <mat-option *ngFor="let sortOpt of resourceDrpdwn | arraySearchFilter : searchText.value" [value]="sortOpt">
+              {{sortOpt}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table> -->
+  <!-- <fieldset>
+    <legend>Employee Details</legend> -->
+ 
+  <!-- </fieldset> -->
+
+  <table class="btn-row">
+    <tr>
+      <td>
+        <button mat-raised-button color="primary" (click)="addEmployee()" [disabled]="!isNew || empRole.dslLimited">Add</button>
+      </td>
+      <td>
+        <button mat-raised-button color="primary" (click)="replaceEmployee()" class="alignBtn" [disabled]="isNew || empRole.dslLimited">Replace </button>
+      </td>
+      <td>
+      <button mat-raised-button color="primary" (click)="next()" class="alignBtn" [disabled]="isNew || disableNext ">Next</button>
+      </td>
+      <td>
+      <button mat-raised-button color="primary" (click)="prev()" class="alignBtn" [disabled]="isNew || disablePrev">Previous</button>
+      </td>
+      <td>
+        <button mat-raised-button color="primary" class="donBtn" (click)="closeDialog()">Done</button>
+      </td>
+    </tr>
+  </table>
+
+</div>

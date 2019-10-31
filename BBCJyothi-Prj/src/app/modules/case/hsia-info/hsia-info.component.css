@@ -1,0 +1,28 @@
+.hsiaFieldset{
+    width: 40%;
+    margin-left: 3%;
+    margin-top:1%;
+}
+mat-form-field{
+    width: 30%;
+    margin-top: 1%;
+}
+mat-form-field.input{
+    width: 20%
+}
+.falloutInfoFieldset{
+    width: 52%;
+    position: absolute;
+    top: 1.5%;
+    left: 44%;
+}
+.efbsFieldset{
+    width: 52%;
+    position: absolute;
+    left: 44%;
+    margin-top: -26%;
+}
+.closeBtn{
+    margin-top: 14%;
+    margin-left: 41%;
+} 

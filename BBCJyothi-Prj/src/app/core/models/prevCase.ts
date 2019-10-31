@@ -1,0 +1,21 @@
+export interface PreviousCase {
+    age: string,
+    clarifyState: string,
+    condition: string,
+    contactObjid: string,
+    creationTime: string,
+    elmObjid: string,
+    firstName: string,
+    idNumber: string,
+    isSupercase: string,
+    lastName: string,
+    locationObjid: string,
+    sCondition: string,
+    sFirstName: string,
+    sLastName: string,
+    sStatus: string,
+    sTitle: string,
+    status: string,
+    title: string,
+    xCaseType: string
+}

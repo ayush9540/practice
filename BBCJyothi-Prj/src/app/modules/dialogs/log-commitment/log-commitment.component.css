@@ -1,0 +1,136 @@
+mat-card{
+    background: #3f51b5;
+    color: white;  
+    margin-top: -2%;
+    width: 101.7%;
+    margin-left: -2%;  
+    padding: 1%;
+}
+p{
+    padding: 10px;
+  }
+  th{
+    /* font-weight: bold; */
+    font-size: 15px;
+    background-color:#3f51b5;
+    color:white;
+    /* height: 20%; */
+    text-align: center;
+  }
+  .header{
+    margin-top: -1%;
+    height: 5.8%;
+    width: 100%;
+    background-color: #3f51b5;
+    color: white;
+  }
+  .grid-container {
+    margin-left: 5px;
+    width: 99.2%;
+    max-width: 99.2%;
+    height: 335px;
+    overflow: auto; 
+    border: 1px solid black; 
+    margin-top: -3%;
+  }
+  table.mat-elevation-z8{
+    width: 100%;
+  }
+  .sideRight{
+    margin-left: 12%;
+  }
+  .sideMiddle{
+    margin-left: 12%;
+  }
+  .datePicker{
+    margin-left: 12%;
+  }
+  .sideLeft{
+    margin-left: 1%;
+  }
+  .showListBtn{ 
+    /* margin-left: 6%; */
+    float: right;
+    margin-right: 9px;
+    margin-top: 0.5%;
+   }
+  .side{
+    float:right;
+    margin-right: 100px;
+  }
+  
+  .datatable> ::ng-deep figure {
+    justify-content: flex-start !important;
+  }
+  
+  mat-grid-tile {
+    justify-content: start;
+  }
+  
+  .datatable{
+    overflow-y:auto;
+  }
+  #table1{
+    width: 55%;
+    margin-left: 35.5%;
+    
+  } 
+  
+  .ftable
+  {
+    width: 100%; 
+    border: 1px solid blue;
+  }
+  .ftd{
+  
+    width: 50%;
+  }
+  .ftd2{
+    width:10%;
+  } 
+  .planner{
+    margin-left: 59%;
+    margin-top: 2%;
+  }
+  .plannerText{
+    width: 22.5%;
+  }
+  table, .buttonGroup{
+    width: 100%;
+  }
+  .deleteRecord{
+    margin-left: -15%;
+  }
+  .reset{
+    margin-left: -15%;
+  }
+  .fullfillDate{
+    margin-left: 15%;
+  }
+  .new{
+    margin-left: 42%;
+  }
+  .done{
+    margin-left: 33%;
+  }
+  .table-date{
+    width: 7%;
+  }
+  .stripe{
+    border-right: 1px solid #f2f2f2;
+     /* padding: 2px;  */
+     width: 0%;
+  }
+  tr.mat-row:nth-child(odd){
+    background: #f2f2f2;
+  }
+  tr.mat-row.highlight{
+    background: #BBDEFB;
+    color: white;
+  }
+  tr.mat-header-row{
+    height: 25px;
+  }
+  td:first-of-type.mat-cell, td:first-of-type.mat-footer-cell, th:first-of-type.mat-header-cell{
+    padding-left: 9px;
+  }

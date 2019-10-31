@@ -1,0 +1,18 @@
+export interface Logs {
+    caseId: string,
+    researchTimeSpent: string,
+    loginName: string,
+    actionType: string,
+    createDate: string,
+    notes: string,
+    internalUseOnly: string,
+    commitment: string,
+    duedate: string,
+    newCaseStatus: string,
+    caseObjid: string,
+    userObjid:string,
+    contactObjid:string,
+    firstName:string,
+    lastName:string,
+    phoneNumber:number,
+}

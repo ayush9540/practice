@@ -1,0 +1,98 @@
+mat-card{
+    background: #3f51b5;
+    color: white;
+    width: 103.7%;
+    padding: 8px;
+    margin-left: -2.8%;
+    margin-top: -2.8%;
+}
+.closeBtn{
+    float: right;
+    margin-right: 1%;
+    cursor: pointer;
+}
+.errorInpt{
+
+}
+table{
+    width: 100%;
+}
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+.mat-form-field {
+    height: 50px;
+}
+.textArea{
+    width: 65%;
+    height: 130px;
+}
+.recomTxt{
+    width: 65%;
+    height: 130px;
+}
+.labelTd{
+    width: 17%;
+}
+.errorInpt{
+    width: 30%;
+}
+.errorInpt1{
+    width: 45%;
+}
+.shortInpt{
+    width: 98.5%;
+}
+.nxtBtn{
+    float: right;
+    margin-right: 10%;
+}
+.errorStatus{
+    width: 16%;
+}
+.saveTd{
+
+}
+.savBtn{
+    float: right;
+    margin-top: 7%;
+    margin-right: 3.3%;
+}
+/* .longLbl{
+    width: 14%;
+    height: 150px;
+    border: 1px solid gray;
+    display: inline-block;
+}
+.longTxt{
+    width: 25%;
+    height: 150px;
+    border: 1px solid gray;
+    float: right;
+}
+.recomLbl{
+    width: 14%;
+    height: 150px;
+    border: 1px solid gray;
+    display: inline-block;
+}
+.recomTxt{
+    width: 25%;
+    height: 150px;
+    border: 1px solid gray;
+    float: right;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+

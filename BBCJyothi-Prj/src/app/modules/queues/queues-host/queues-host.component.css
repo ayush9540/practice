@@ -1,0 +1,44 @@
+.mat-tree-node{
+    margin-left: -12%;
+    min-height: 23px;
+}
+.hostSimple{
+    padding-left: 12%;
+}
+
+.mat-tree{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}  
+.mat-scroll{
+    overflow: auto;
+    /* position: static; */
+}
+.mat-scroll2{
+    overflow-y: auto;
+    /* position: static; */
+}
+.childHover:hover{
+    cursor: pointer;
+
+    /* font-family: bold; */
+    /* background:darkgrey; */
+    /* color: blue; */
+}
+[class*="small icon-"] {
+    cursor: pointer;
+}
+.alignItm{
+    margin-left: -16%;
+}
+/* .mat-grid-tile{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+} */
+
+  /* .mat-grid-tile{
+      position: static;
+  } */
+  

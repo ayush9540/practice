@@ -1,0 +1,50 @@
+[
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "dev_d_sa",
+        "sharedPersSt": "Personal"
+    },
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "prakash",
+        "sharedPersSt": "Personal"
+    },
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "srini",
+        "sharedPersSt": "Personal"
+    },
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "anji",
+        "sharedPersSt": "Personal"
+    },
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "gayatri",
+        "sharedPersSt": "Personal"
+    },
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "venu",
+        "sharedPersSt": "Shared"
+    },
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "jit",
+        "sharedPersSt": "Shared"
+    },
+    {
+        "objid": 12345,
+        "title": "Modify Commitment",
+        "ownerLogin": "jit",
+        "sharedPersSt": "Shared"
+    }
+]

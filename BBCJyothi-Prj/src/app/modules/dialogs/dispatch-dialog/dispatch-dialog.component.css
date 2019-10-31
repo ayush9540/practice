@@ -1,0 +1,40 @@
+mat-card{
+    background: #3f51b5;
+    color: white;
+    margin-top: -9%;
+    width: 113%;
+    margin-left: -9%;  
+    padding: 2%;
+}
+table.mat-elevation-z8{
+    width: 100%;
+  }
+  tr.mat-row{
+    height: 25px;
+  }
+  th{
+    text-align: center;
+    font-size: 15px;
+    background-color: #3f51b5;
+    color:white;
+    height: 20%;
+  }
+  .queueTable{
+    height: 220px;
+    overflow: auto; 
+    border: 1px solid black;  
+  }
+  .thirdOrder{
+    margin-left: -50%;
+    width: 100px;
+  }
+  select{
+    height: 30px;
+    width: 57%;
+  }
+  .listBtn{
+    margin-left: 15%;
+  }
+  tr.mat-header-row{
+    height: 25px;
+}

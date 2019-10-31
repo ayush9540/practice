@@ -1,0 +1,354 @@
+<mat-progress-spinner style="left: 62%;z-index:125;position: fixed;margin-top: 10%;" *ngIf="isLoading" color="success" mode="indeterminate"></mat-progress-spinner>
+<div>
+    Circuit Information:
+  <table class="tbl">
+    <tr>
+      <td>
+        <div class="divTbl">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="Conne">
+                    <th mat-header-cell *matHeaderCellDef> Connection </th>
+                    <td mat-cell *matCellDef="let ServiceInfo">{{ServiceInfo.accessSeq}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                       <td mat-cell *matCellDef="let ServiceInfo"> {{ServiceInfo.accessPointStatus}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="DSL Order ID">
+                  <th mat-header-cell *matHeaderCellDef> DSL Order ID </th>
+                  <td mat-cell *matCellDef="let ServiceInfo"> {{ServiceInfo.orderNumber}} </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns;" 
+                                                [ngClass]="{'highlight': selectedServerInfo == row}"
+                                                (click)="setClickedRow(row)"></tr>
+                </table>      
+        </div>
+      </td>
+      <!-- <td>
+        <div class="divTbl2"> </div>
+      </td> -->
+    </tr>
+  </table>
+    <div class="OtherHead" [class.disbleByRole]="empRole.dslLimited">
+      Other Service Info
+      <hr>
+    <mat-form-field class="OtherInfo">
+      <mat-select placeholder="Offer/Product" [(ngModel)]="selectedServerInfo.offerProduct"  [disabled]="true">
+        <mat-option *ngFor="let ohtrerX of offerProducts" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <input matInput placeholder="HSIA Indicator" [(ngModel)]="selectedServerInfo.hsiaIndicator" type="text" [disabled]="true"> 
+      <!-- <mat-select placeholder="HSIA Indicator" [(ngModel)]="selectedServerInfo.hsiaIndicator">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select> -->
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <input matInput placeholder="HSIA Held Ord Ind" [(ngModel)]="selectedServerInfo.hsiaHeldOrdInd" type="text" [disabled]="true">
+      <!-- <mat-select placeholder="HSIA Held Ord Ind" [(ngModel)]="selectedServerInfo.hsiaHeldOrdInd">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select> -->
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <mat-select placeholder="Service Level" [(ngModel)]="selectedServerInfo.serviceClass" [disabled]="!caseInfo.caseYanked || empRole.dslLimited">
+        <mat-option *ngFor="let ohtrerX of serviceLevels" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <input matInput placeholder="NTT" [(ngModel)]="selectedServerInfo.networkTransportType" type="text" [disabled]="true">
+      <!-- <mat-select placeholder="NTT" [(ngModel)]="selectedServerInfo.networkTransportType">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select> -->
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <mat-select placeholder="Service Speed" [(ngModel)]="selectedServerInfo.accessSpeed" [disabled]="!caseInfo.caseYanked || empRole.dslLimited">
+        <mat-option *ngFor="let ohtrerX of serviceSpeeds" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <table style="width:100%">
+    <tr>
+      <td>
+        <fieldset class="providerInfo">
+          <legend>Provider Information</legend>
+          <div class="provderHeader">
+            <mat-form-field class="billingInpt">
+              <input matInput placeholder="Provider Order Status" [(ngModel)]="selectedServerInfo.providerOrderStatus" type="text" [disabled]="true"> 
+            </mat-form-field> 
+            <mat-form-field class="billingInpt inpt">
+              <input matInput placeholder="Provider Order Number" [(ngModel)]="selectedServerInfo.providerOrderId" type="text" [disabled]="true"> 
+            </mat-form-field> 
+            <mat-form-field class="billingInpt inpt">
+              <input matInput placeholder="SOEG Request ID" [(ngModel)]="selectedServerInfo.soegRequestId" type="text" [disabled]="empRole.dslLimited"> 
+            </mat-form-field> 
+          </div>
+          <div>
+            <mat-form-field class="billingInpt">
+              <input matInput placeholder="Provider Circuit Number" [(ngModel)]="selectedServerInfo.providerCktNumber" type="text" [disabled]="true"> 
+            </mat-form-field> 
+            <mat-form-field class="billingInpt inpt">
+              <input matInput placeholder="Provider Name" [(ngModel)]="selectedServerInfo.dslProvider" [disabled]="true" type="text" [disabled]="empRole.dslLimited"> 
+            </mat-form-field> 
+            <mat-form-field class="billingInpt inpt">
+              <input matInput placeholder="Dry Loop Indicator" [(ngModel)]="selectedServerInfo.dryLoopInd" type="text" [disabled]="true"> 
+            </mat-form-field> 
+          </div>
+          <div>
+            <mat-form-field class="billingInpt">
+              <input matInput placeholder="DSLAM Type" [(ngModel)]="selectedServerInfo.dslamType" type="text" [disabled]="true"> 
+            </mat-form-field> 
+            <mat-form-field class="billingInpt inpt">
+              <input matInput placeholder="Backhaul Circuit Number" [(ngModel)]="selectedServerInfo.backhaulCircuitNumber" type="text" [disabled]="true"> 
+            </mat-form-field> 
+            <mat-form-field class="billingInpt inpt">
+              <input matInput placeholder="uBAN Ord.Num" [(ngModel)]="selectedServerInfo.uban" type="text" [disabled]="true"> 
+            </mat-form-field> 
+          </div>
+        </fieldset>
+      </td>
+    </tr>
+  </table>
+<table style="width:100%">
+  <tr>
+    <td>
+      <fieldset class="ipInfo" [class.disbleByRole]="empRole.dslLimited">
+        <legend>IP Information</legend>
+        <div class="ipInfoBorder">
+          <table class="IpInfoTbl">
+            <tr>
+              <td  class="ipInfoLbl"><mat-label>WAN CR:</mat-label></td>
+              <td>  
+              <mat-form-field class="ipInfoInpt">
+                <input matInput [(ngModel)]="selectedServerInfo.wanCustomerRouterIp" type="text" [disabled]="true"> 
+              </mat-form-field> 
+              </td>
+            </tr>
+          </table>
+          <table class="IpInfoTbl tableUp">
+            <tr>
+              <td  class="ipInfoLbl"><mat-label>WAN EU:</mat-label></td>
+              <td>
+              <mat-form-field class="ipInfoInpt">
+                <input matInput [(ngModel)]="selectedServerInfo.wanEndUserIp" type="text" [disabled]="true"> 
+              </mat-form-field> 
+              </td>
+            </tr>
+          </table>
+          <table class="IpInfoTbl tableUp">
+            <tr>
+              <td  class="ipInfoLbl"><mat-label>WAN Subnet:</mat-label></td>
+                <td>  
+                  <mat-form-field class="ipInfoInpt">
+                    <input matInput [(ngModel)]="selectedServerInfo.wanSubnet" type="text" [disabled]="true"> 
+                  </mat-form-field> 
+              </td>
+            </tr>
+          </table>
+          <table class="IpInfoTbl tableUp">
+            <tr>
+              <td  class="ipInfoLbl"><mat-label>WAN Broadcast:</mat-label></td>
+                <td>  
+                  <mat-form-field class="ipInfoInpt">
+                    <input matInput [(ngModel)]="selectedServerInfo.wanBroadcastIp" type="text" [disabled]="true"> 
+                  </mat-form-field> 
+              </td>
+            </tr>
+          </table>
+          <table class="IpInfoTbl tableUp">
+            <tr>
+              <td  class="ipInfoLbl"><mat-label>LAN Subnet:</mat-label></td>
+              <td>  
+                <mat-form-field class="ipInfoInpt">
+                  <input matInput [(ngModel)]="selectedServerInfo.lanSubnet" type="text" [disabled]="true"> 
+                </mat-form-field> 
+              </td>
+            </tr>
+          </table>
+          <table class="IpInfoTbl tableUp">
+            <tr>
+              <td  class="ipInfoLbl"><mat-label>LAN EU:</mat-label></td>
+              <td>  
+                <mat-form-field class="ipInfoInpt">
+                  <input *ngIf="offerProducts[1] != selectedServerInfo.offerProduct" matInput type="text" disabled>
+                  <input *ngIf="offerProducts[1] == selectedServerInfo.offerProduct" matInput [(ngModel)]="selectedServerInfo.lanEndUserIp" type="text" [disabled]="true"> 
+                </mat-form-field> 
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="ipInfoOut">
+          <mat-form-field class="ipInfoInpt">
+            <input matInput placeholder="WAN Protocol" [(ngModel)]="selectedServerInfo.wanProtocol" type="text" [disabled]="true"> 
+          </mat-form-field> 
+          <mat-form-field class="ipInfoInpt">
+            <input matInput placeholder="LAN Protocol" [(ngModel)]="selectedServerInfo.lanProtocol" type="text" [disabled]="true"> 
+          </mat-form-field> 
+          <mat-form-field class="ipInfoInpt">
+            <input matInput placeholder="LAN PVC" [(ngModel)]="selectedServerInfo.lanCustomerPvc" type="text" [disabled]="true"> 
+          </mat-form-field> 
+        </div>
+        <fieldset class="availIpAdrs">
+          <legend>Available IP Address</legend>
+          <span>
+            <mat-label>From: </mat-label>
+            <mat-form-field>
+                  <input *ngIf="offerProducts[1] != selectedServerInfo.offerProduct" matInput type="text" disabled>
+                  <input *ngIf="offerProducts[1] == selectedServerInfo.offerProduct" matInput [(ngModel)]="serviceFrom" type="text" disabled>
+            </mat-form-field>
+            <mat-label class="availTo">To: </mat-label>
+            <mat-form-field>
+                <input *ngIf="offerProducts[1] != selectedServerInfo.offerProduct" matInput type="text" disabled>
+                <input *ngIf="offerProducts[1] == selectedServerInfo.offerProduct" matInput [(ngModel)]="serviceTo" type="text" disabled> 
+            </mat-form-field>
+          </span>
+        </fieldset>
+
+        <div class="lineSplt">
+        <mat-form-field class="selectOne">
+          <mat-select placeholder="Line Split Type" [(ngModel)]="selectedServerInfo.linesplitType" [disabled]="true">
+            <mat-option *ngFor="let x of lineSplitType" [value]="x">{{x}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="selectOne selectAlin">
+          <mat-select placeholder="Line Shared" [(ngModel)]="selectedServerInfo.lineShared" [disabled]="true">
+            <mat-option *ngFor="let x of lineShred" [value]="x">{{x}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="selectOne selectAlin">
+          <mat-select placeholder="Remote Worker" [(ngModel)]="selectedServerInfo.remoteWorkerInd" [disabled]="true">
+            <mat-option *ngFor="let x of remoteWorkerValues" [value]="x">{{x}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </div>
+      </fieldset>
+    </td>
+  </tr>
+</table>
+<!-- <div class="selectDrop"> -->
+  <!-- <mat-form-field class="selectOne">
+  <mat-select placeholder="Line Split Type" [(ngModel)]="selectedX">
+    <mat-option *ngFor="let x of selected" [value]="x">{{x}}</mat-option>
+  </mat-select>
+  </mat-form-field>
+  <mat-form-field class="selectOne selectAlin">
+    <mat-select placeholder="Line Shared" [(ngModel)]="selectedXs">
+      <mat-option *ngFor="let x of selected" [value]="x">{{x}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="selectOne selectAlin">
+    <mat-select placeholder="Remote Worker" [(ngModel)]="selectedXn">
+      <mat-option *ngFor="let x of selected" [value]="x">{{x}}</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  
+  <!-- <div class="OtherHead">
+      Other Service Info
+      <hr>
+    <mat-form-field class="OtherInfo">
+      <mat-select placeholder="Offer/Product" [(ngModel)]="selectedServerInfo.offerProduct">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <mat-select placeholder="HSIA Indicator" [(ngModel)]="selectedServerInfo.hsiaIndicator">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <mat-select placeholder="HSIA Held Ord Ind" [(ngModel)]="selectedServerInfo.hsiaHeldOrdInd">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <mat-select placeholder="Service Level" [(ngModel)]="selectedServerInfo.serviceClass">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <mat-select placeholder="NTT" [(ngModel)]="selectedServerInfo.networkTransportType">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="OtherInfo otherAlin">
+      <mat-select placeholder="Service Speed" [(ngModel)]="selectedServerInfo.accessSpeed">
+        <mat-option *ngFor="let ohtrerX of OtherInfoSelected" [value]="ohtrerX">{{ohtrerX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
+  <div class="optInfo">
+      Optional Information:
+    <hr>
+   <!-- <table class="optionTbl">
+     <tr>
+       <td>
+        <button class="subBtn" mat-button>Subscribe>></button>
+        <button class="unSubBtn" mat-button><<UnSubscribe</button>
+       </td>
+     </tr>
+   </table> -->
+    <!-- <div class="optionalInfo">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+            <ng-container matColumnDef="Options">
+                <th mat-header-cell *matHeaderCellDef> Options </th>
+                   <td mat-cell *matCellDef="let ServiceInfo"></td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns3; sticky: true"></tr>
+            <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns3;"></tr>
+            </table>      
+    </div> -->
+    <div class="unsupOption" [class.disbleByRole]="empRole.dslLimited">
+        <table mat-table [dataSource]="installedOptionsdataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="Subscribed">
+                <th mat-header-cell *matHeaderCellDef> Subscribed Options </th>
+                <td mat-cell *matCellDef="let tableInstalledOption">{{tableInstalledOption.serviceOptionsName}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="Quantity">
+                <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                <td mat-cell *matCellDef="let tableInstalledOption">{{tableInstalledOption.quantity}}</td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2; sticky: true"></tr>
+            <tr mat-row class="result-row" *matRowDef="let row; columns: displayedColumns2;"
+            [ngClass]="{'highlight': selectedSubscribedOption == row}"
+            (click)="selectInstallOption(row)"
+            ></tr>
+      </table>      
+    </div>
+    <mat-form-field class="SubInfoOne">
+      <input matInput [(ngModel)]="selectedSubscribedOption.quantity" type="text" [disabled]="true"> 
+    </mat-form-field> 
+    <mat-form-field *ngIf="offerProducts[1] != selectedServerInfo.offerProduct" class="SubInfo">
+      <mat-select placeholder="Static IP" [(ngModel)]="selectedServerInfo.staticIpInd" [disabled]="empRole.dslLimited">
+        <mat-option *ngFor="let OptionX of OptionalInfo" [value]="OptionX" >{{OptionX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="offerProducts[1] != selectedServerInfo.offerProduct" class="SubInfo">
+      <mat-select placeholder="NAT" [(ngModel)]="selectedServerInfo.natOfferInd" [disabled]="empRole.dslLimited || !caseInfo.caseYanked">
+        <mat-option *ngFor="let OptionX of OptionalInfo" [value]="OptionX">{{OptionX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="SubInfo">
+      <mat-select placeholder="BYO CPE" [(ngModel)]="selectedServerInfo.byoCpeIndicator" [disabled]="empRole.dslLimited">
+        <mat-option *ngFor="let OptionX of OptionalInfo" [value]="OptionX" >{{OptionX}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="button-row">
+    <!-- <button class="btn" mat-button>Add Service</button> -->
+    <button mat-raised-button (click)="modifyService()" color="primary" class="btn" mat-button [disabled]="empRole.dslLimited">Modify Service</button>
+    <!-- <button mat-raised-button color="primary" class="btn1" mat-button>Billing</button> -->
+    <button mat-raised-button color="primary" class="btn1" mat-button (click)="hsiaModal()">HSIA</button>
+    <button mat-raised-button (click)="viewIpDialog()" color="primary" class="btn1" mat-button>View IPs</button>
+    <button mat-raised-button color="primary" (click)="viewCpeDialog()" class="btn2" mat-button>View CPE</button>
+  </div>
+</div>

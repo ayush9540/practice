@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+body { margin: 0; }
+
+[class*="icon-"] {
+    font-style: normal;
+    font-size: 36px;
+    top: 0;
+}
+[class*="medium icon-"] {
+    font-style: normal;
+    font-size: 30px;
+    top: 0;
+}
+[class*="small icon-"] {
+    font-style: normal;
+    font-size: 24px;
+    top: 0;
+}
+.red {
+    color: red;
+}
+.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+tr.mat-row.highlight{
+    background:#BBDEFB;
+    color: white;
+}
+.mat-select-disabled .mat-select-value {
+    color: black;
+    font-size: 14px;
+}
+
+mat-dialog-container{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.mat-form-field-disabled .mat-input-element:disabled{
+    color: black;
+}
+.close{
+    cursor: pointer;
+    float: right;
+    padding-right: 8px;
+}
+
+.arraySearchFilter.mat-form-field{
+    width: 92%;
+    padding-left: 16px;
+}
+
+th.mat-header-cell {
+    cursor: col-resize;
+}
+
+td[mat-cell],
+th[mat-header-cell] {
+  flex: none;  
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

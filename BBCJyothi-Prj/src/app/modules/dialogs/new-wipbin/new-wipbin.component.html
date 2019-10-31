@@ -1,0 +1,20 @@
+<div>
+  <mat-card>WIPbin <p (click)="closeDialog()" class="close">&times;</p> </mat-card>
+  <div>
+    <mat-label>Title: </mat-label>
+    <mat-form-field class="titleInput">
+      <input matInput [(ngModel)]="selectedTyp.title" type="text">
+    </mat-form-field>
+  </div>
+  <span>Description: </span>
+  <textarea [(ngModel)]="selectedTyp.description" class="contentTbl"></textarea>
+  <table class="btnGrp">
+    <tr>
+        <td class="openTd"><button mat-raised-button (click)="addWipBin()" color="primary" class="addBtn" mat-button [disabled]="empRole.dslLimited">Add</button></td>
+        <td class="openTd"><button [disabled]="replaceButton || empRole.dslLimited" mat-raised-button (click)="replaceWipBin()" color="primary" class="replaceBtn" mat-button>Replace</button></td>
+        <!-- <td class="openTd"><button mat-raised-button color="primary" class="replaceBtn" mat-button>Left</button></td>
+        <td class="openTd"><button mat-raised-button color="primary" class="replaceBtn" mat-button>Right</button></td> -->
+        <td class="openTd"><button (click)="closeDialog()" mat-raised-button color="primary" class="doneBtn" mat-button>Done</button></td>
+    </tr>
+  </table>
+</div>

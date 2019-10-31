@@ -1,0 +1,23 @@
+<!-- <h1 mat-dialog-title>{{message}}</h1>
+<div>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" (click)="onNo()">No</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="okBtn" mat-raised-button color="primary" (click)="onYes()" >Yes</button>
+    </div>
+</div> -->
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <header class="w3-container w3-teal"> 
+    Confirmation
+    <span class="close" (click)="onNo()">&times;</span>
+    </header>
+    <div class="body">
+      {{message}}
+    </div>
+    <footer class="footer">
+      <button class="okBtn" mat-raised-button color="primary" (click)="onYes()" >Yes</button>
+      <button class="noBtn" mat-raised-button color="primary" (click)="onNo()">No</button>
+    </footer>
+  </div>
+</div>

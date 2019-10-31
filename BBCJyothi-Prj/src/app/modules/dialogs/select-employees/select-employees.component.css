@@ -1,0 +1,80 @@
+
+mat-card{
+    background: #3f51b5;
+    color: white;
+    width: 103.2%;
+    padding: 8px;
+    margin-left: -2.5%;
+    margin-top: -2.2%;
+}
+.listEmployees{
+    margin-top: 1.4%;
+}
+table{
+    width: 100%;
+}
+.sortOption{
+    width: 70%;
+}
+.inpt{
+    width: 90%;
+}
+.optionTd{
+    width: 15%;
+}
+.listBtnTd{
+    width: 8%;
+}
+.empData{
+    width: 100%;
+    height: 250px;
+    border: 1px solid gray;
+    overflow: auto;
+}
+tr.mat-header-row{
+    height: 25px;
+}
+tr.mat-row{
+    height: 35px;
+}
+th{
+    /* background: #3f51b5; */
+}
+th.mat-header-cell{
+    background: #3f51b5;
+    color: white;
+}
+.items{
+    width: 30%;
+}
+.doneBtn{
+    float: right;
+}
+.inptTd{
+    width: 20%;
+}
+.td{
+    border-right: 1px solid #0000001f;
+    padding: 5px;
+}
+.th {
+    border-right: 1px solid #0000001f;
+    padding-left: 4px;
+}
+
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

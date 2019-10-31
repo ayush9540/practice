@@ -1,0 +1,191 @@
+
+.labelTd{
+width: 16%;
+}
+.textInput{
+    width: 30%;
+}
+mat-form-field{
+    height: 45px;
+}
+.labelTd2{
+    width: 9%;
+}
+.textinpt2{
+    width: 33%;
+}
+.tableGrp{
+    width: 100%;
+}
+.oclTd{
+    width: 6%;
+}
+.paymentDropdown{
+    width: 95%;
+    margin-left: 1%;
+}
+.geoLbl{
+    margin-left: 1%;
+}
+.mncLbl{
+    margin-left: 7%;
+}
+.billing-inpt{
+    width: 95%;
+}
+.accountInpt, .externalInpt{
+    width: 95%;
+}
+.grcLbl{
+    margin-left: 2.6%;
+}
+.grcInpt{
+    width: 95%;
+}
+.billingLbl{
+    margin-left: 1%;
+}
+.billingInpt{
+    width: 95%;
+}
+.socLbl{
+    margin-left: 2%;
+}
+.socInpt{
+    width: 95%;
+}
+.oclLbl{
+    margin-left: 1.5%;
+}
+.oclCheckbox{
+    margin-left: 4%;
+}
+.alternateInpt{
+    width: 95%;
+}
+.contractLbl{
+    margin-left: 1.4%;
+}
+.contractInpt{
+    width: 95%;
+}
+.bilstartInpt{
+    width: 90%;
+}
+.serdiscInpt{
+    width: 90%;
+}
+.serstartInpt{
+    width: 90%;
+}
+.billstartLble{
+
+}
+.serstartLbl{
+
+}
+.btnGrp{
+    background: #3f51b5;
+    color: white;
+    margin-top: 2%;
+    margin-right: 2%;
+    float: right;
+
+}
+.myDiv{
+    border: 1px solid gray;
+}
+.bgateBtn{
+    float: right;
+    margin-top: 2%;
+}
+.updatBtn{
+    float: right;
+    margin-right: 2%;
+}
+.sidBtn1{
+    background: #3f51b5;
+    color: white;
+    float: right;
+}
+.sidBtn{
+    float: right;
+}   
+.disconBtn{
+    float: right; 
+} 
+.alterLblTd{
+    width: 12%;
+}
+
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+.billingMoreDetails{
+    width: 50%;
+    height: 165px;
+    display: inline-block;
+    /* border: 1px solid gray; */
+}
+.billingMoreDetails2{
+    width: 42%;
+    height: 165px;
+    display: inline-block;
+    float: right;
+    /* border: 1px solid gray; */
+}
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1em;
+}
+.Time{
+    width: 100%;
+}
+
+table, tr, td{
+    /* border: 1px solid gray; */
+}
+.btnTbl{
+    width: 100%;
+}
+.btnTbl2{
+    width: 100%;
+    margin-top: 2%;
+}
+.serviceStart{
+    width: 34.7%;
+}
+.billStartDate{
+    width: 34.7%;
+}
+.billDateTime{
+    width: 17.5%;
+}
+.serviceDateTime{
+    width: 17.5%;
+}
+.updateActTd{
+    width: 25%;
+}
+.emitTd{
+    width: 25%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
