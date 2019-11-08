@@ -1,5 +1,5 @@
 <div>
     <ul class="items">
-        <li *ngFor="let department of departments" (onclick)="onselect(dept)"><span class="badge">{{department.id}}</span>{{department.name}}</li>
+        <li *ngFor="let department of departments" (click)="onselect(department)"><span class="badge">{{department.id}}</span>{{department.name}}</li>
     </ul>
 </div>

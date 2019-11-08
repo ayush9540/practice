@@ -11,6 +11,7 @@ import { EmployeeService } from './employee.service';
 import {HttpClientModule} from '@angular/common/http';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
+import { FormTdfComponent } from './form-tdf/form-tdf.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DepartmentDetailComponent } from './department-detail/department-detail
     EmployeeComponent,
     DepartmentListComponent,
     DepartmentDetailComponent,
+    FormTdfComponent,
   ],
   imports: [
     BrowserModule,

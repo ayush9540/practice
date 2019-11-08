@@ -20,7 +20,7 @@ export class DepartmentListComponent implements OnInit {
   ]
 
   onselect(dept) {
-    this.router.navigate(['/departments', dept.id])
+    this.router.navigate(['/department', dept.id])
   }
 
 }

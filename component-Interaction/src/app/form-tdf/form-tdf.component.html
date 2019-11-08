@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <h1>test form</h1>
+    <form #userform="ngForm">
+
+        {{userform.value | json}}
+        <hr/> {{userModel | json}}
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="userName" class="form-control" [ngModel]="userModel.userName">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+                <span class="input-group-prepend input-group-text">@</span>
+                <input type="email" name="email" class="form-control" [ngModel]="userModel.email">
+            </div>
+
+        </div>
+
+        <div class=" form-group ">
+            <label for="phoneNo ">Phone no.</label>
+            <input type="tel " name="phone " class="form-control " [ngModel]="userModel.phone">
+        </div>
+
+        <div class="form-group">
+            <select name="topics" class="custom-select" ngModel>
+                <option selected>I am interested in</option>
+                <option *ngFor = "let topic of topics">{{topic}}</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="">Time Preference</label>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" value="morning" ngModel name="timePreference">
+                <label for="" class="form-check-label">morning (9am-12pm)</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" value="evening" ngModel name="timePreference">
+                <label for="" class="form-check-label">evening (5pm-8pm)</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" name="subscribe" class="form-check-input" ngModel>
+                <label for="" class="form-check-label">send me promotional offers</label>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit Form</button>
+
+    </form>
+</div>
