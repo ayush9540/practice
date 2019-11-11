@@ -7,8 +7,11 @@
 
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="userName" class="form-control" [ngModel]="userModel.userName">
+            <input type="text" required name="userName" #name="ngModel" class="form-control" [class.is-invalid]="name.invalid && name.touched" [ngModel]="userModel.userName">
+            <!-- <input type="text" #name="ngModel" name="userName" class="form-control" [ngModel]="userModel.userName"> -->
         </div>
+
+        <!-- {{name.valid}} -->
 
         <div class="form-group">
             <label for="email">Email</label>
@@ -21,7 +24,7 @@
 
         <div class=" form-group ">
             <label for="phoneNo ">Phone no.</label>
-            <input type="tel " name="phone " class="form-control " [ngModel]="userModel.phone">
+            <input type="tel" name="phone" #phone="ngModel" required pattern="^\d{10}$" [class.is-invalid]="phone.invalid" class="form-control" [ngModel]="userModel.phone">
         </div>
 
         <div class="form-group">
