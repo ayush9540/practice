@@ -1,14 +1,17 @@
 <div class="container-fluid">
-    <h1>test form</h1>
-    <form #userform="ngForm">
+    <!-- <h1>test form</h1> -->
+    <form #userform="ngForm" (ngSubmit)="onSubmit()" novalidate>
 
-        {{userform.value | json}}
+        <hr/> {{userform.form.valid}}
+        <hr/> {{userform.value | json}}
         <hr/> {{userModel | json}}
+        <hr/>
 
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" required name="userName" #name="ngModel" class="form-control" [class.is-invalid]="name.invalid && name.touched" [ngModel]="userModel.userName">
             <!-- <input type="text" #name="ngModel" name="userName" class="form-control" [ngModel]="userModel.userName"> -->
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
         </div>
 
         <!-- {{name.valid}} -->
@@ -17,21 +20,27 @@
             <label for="email">Email</label>
             <div class="input-group">
                 <span class="input-group-prepend input-group-text">@</span>
-                <input type="email" name="email" class="form-control" [ngModel]="userModel.email">
+                <input type="email" required #email="ngModel" name="email" class="form-control" [ngModel]="userModel.email">
             </div>
-
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched">email is required</small>
         </div>
 
         <div class=" form-group ">
             <label for="phoneNo ">Phone no.</label>
             <input type="tel" name="phone" #phone="ngModel" required pattern="^\d{10}$" [class.is-invalid]="phone.invalid" class="form-control" [ngModel]="userModel.phone">
+            <!-- <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phoneno. is required & should be of 10 digits only.</small> -->
+            <div *ngIf="phone.errors && (phone.invalid || phone.untouched)">
+                <small class="text-danger" *ngIf="phone.errors.pattern">Phone number should be of 10 digits only</small>
+                <small class="text-danger" *ngIf="phone.errors.required">Phone number is required</small>
+            </div>
         </div>
 
         <div class="form-group">
-            <select name="topics" class="custom-select" ngModel>
-                <option selected>I am interested in</option>
+            <select name="topics" (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" #topic="ngModel" [class.is-invalid]="topicHasError && topic.touched" class="custom-select" [ngModel]="userModel.topics">
+                <option selected value="default">I am interested in</option>
                 <option *ngFor = "let topic of topics">{{topic}}</option>
             </select>
+            <small class="text-danger" [class.d-none]="!topicHasError || topic.untouched">please select an option</small>
         </div>
 
         <div class="mb-3">
@@ -53,7 +62,7 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" type="submit">Submit Form</button>
+        <button class="btn btn-primary" [disabled]="userform.form.invalid" type="submit">Submit Form</button>
 
     </form>
 </div>
